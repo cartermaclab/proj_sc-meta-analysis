@@ -1,0 +1,85 @@
+Author,Year,Exp,setting,comp,choice,pub,subpop,interval,N,ret_g,ret_v,acq_g,acq_v,tra_g,tra_v,ret_se
+Aiken et al.,2012,,applied,nomen,observe,y,adult,24,28,0.09,0.13,0.01,0.13,0.46,0.14,0.360555128
+Alami,2013,,lab,nomen,KR,n,adult,24,22,-0.92,0.19,-1.1,0.2,-0.96,0.19,0.435889894
+Ali et al.,2012,,lab,yes,KR,y,adult,24,48,0.49,0.08,0.11,0.08,0.67,0.09,0.282842712
+Andrieux et al,2016,,lab,nomen,difficulty,y,adult,24,48,0.94,0.17,0.93,0.17,,,0.412310563
+Andrieux et al.,2012,,lab,nomen,difficulty,y,adult,24,38,,,0.82,0.11,,,
+Arsal,2004 (Exp. 1),(Exp. 1),lab,nomen,KR,n,adult,48,28,0.83,0.15,,,,,0.387298335
+Arsal,2004 (Exp. 2),(Exp. 2),lab,nomen,KR,n,child,48,28,-0.12,0.13,,,-0.75,0.14,0.360555128
+Barros,2010 (blocked),(blocked),lab,nomen,KR,n,adult,24,48,-0.43,0.14,,,-0.21,0.14,0.374165739
+Barros,2010 (random),(random),lab,nomen,KR,n,adult,24,48,0.14,0.13,,,-0.32,0.14,0.360555128
+Barros et al.,2018 (Exp. 1),(Exp. 1),labapplied,no,KR,y,adult,24,60,0.31,0.1,0.43,0.1,0.31,0.1,0.316227766
+Barros et al.,2018 (Exp. 2),(Exp. 2),lab,no,KR,y,adult,24,60,0.55,0.1,0.23,0.1,0.28,0.1,0.316227766
+Bass,2015,,lab,no,KR,n,adult,24,20,0.83,0.2,1.12,0.21,0.31,0.19,0.447213595
+Bass,2018,,applied,no,KR,n,adult,24,60,,,,,,,
+Brydges et al.,2009,,applied,nomen,observe,y,adult,longer,48,,,,,,,
+Bund & Weimeyer,2004,,labapplied,no,observe,y,adult,24,52,,,,,,,
+Carter & Patterson,2012,,lab,nomen,KR,y,adult,24,20,,,,,,,
+Carter & Patterson,2012,,lab,nomen,KR,y,older,24,20,,,,,,,
+Carter & Patterson,2012,,lab,nomen,KR,y,two,24,40,,,,,,,
+Chen et al.,2002,,lab,yes,KR,y,adult,48,48,,,,,,,
+Chiviacowsky,2014,,lab,nomen,KR,y,adult,24,28,0.77,0.15,0.43,0.14,,,0.387298335
+Chiviacowsky & Lessa,2017,,lab,nomen,KR,y,older,48,22,0.36,0.17,0.29,0.17,0.97,0.19,0.412310563
+Chiviacowsky & Wulf,2002,,lab,nomen,KR,y,adult,24,30,0.31,0.13,0.4,0.13,0.85,0.14,0.360555128
+Chiviacowsky et al.,2012,,lab,nomen,KR,y,clinical,24,30,0.77,0.14,0.77,0.14,,,0.374165739
+Chiviacowsky et al.,2008,,lab,nomen,KR,y,child,24,26,0.8,0.16,0.68,0.15,,,0.4
+Chiviacowsky et al.,2012,,lab,nomen,assitive,y,clinical,24,28,0.76,0.14,0.55,0.14,,,0.374165739
+Davis,2009,,applied,nomen,KP,n,adult,24,24,,,,,,,
+Fagundes et al.,2013,,labapplied,nomen,model,y,adult,48,52,,,,,,,
+Fairbrother et al.,2012,,lab,nomen,KR,y,adult,24,48,0.41,0.08,0.71,0.09,0.63,0.08,0.282842712
+Ferreira et al.,2019,,lab,nomen,KR,y,adult,24,60,0.27,0.07,0.06,0.06,,,0.264575131
+Figueiredo et al.,2018,,lab,no ,KR,y,adult,24,30,0.37,0.19,0.35,0.19,1.56,0.24,0.435889894
+Ghorbani,2019 (Exp .2),(Exp. 2),labapplied,nomen,KR,y,adult,24,36,,,,,,,
+Grand et al.,2015,,lab,no,KR,y,adult,24,36,0.3,0.11,,,0.8,0.12,0.331662479
+Grand et al.,2017,,lab,yes,incidental,y,adult,longer,68,-0.14,0.06,,,-0.03,0.06,0.244948974
+Hansen et al.,2011,,lab,no,KR,y,adult,24,24,-0.44,0.18,,,3.54,0.44,0.424264069
+Hartman,2007,,lab,nomen,assitive,y,adult,24,18,1.29,0.25,1.01,0.23,,,0.5
+Hemayettalab et al.,2013,,lab,nomen,KR,y,clinical,24,20,,,,,,,
+Ho,2016,,lab,nomen,amount,n,adult,24,120,-0.18,0.03,,,0.05,0.03,0.173205081
+Holmberg,2013,,labapplied,no,KP,n,adult,24,24,-0.69,0.17,-0.31,0.16,-0.29,0.16,0.412310563
+Huet et al.,2009,,labapplied ,nomen,concurrent ,y,adult,24,20,,,,,,,
+Ikodome et al.,2019 (Exp. 1),(Exp. 1),labapplied,no,incidental,y,adult,24,40,0.08,0.02,,,,,0.141421356
+Ikodome et al.,2019 (Exp. 2),(Exp. 2),labapplied,no,observe,y,adult,24,40,0.88,0.1,,,,,0.316227766
+Jalalvan et al.,2019,,labapplied,nomen,difficulty,y,adult,24,60,,,,,,,
+Janelle et al.,1997,,labapplied ,yes,KP,y,adult,longer,48,,,,,,,
+Jones,2010,,lab,yes,schedule,n,adult,24,40,,,,,,,
+Kaefer et al.,2014,,lab,no ,KR,y,adult,24,56,0.53,0.07,,,0.19,0.07,0.264575131
+Keetch & Lee,2007,,lab,yes,schedule,y,adult,24,96,,,,,,,
+Kim et al.,2019,,lab,yes,KR,y,adult,24,42,0.32,0.09,-0.81,0.1,0.74,0.1,0.3
+Leiker et al.,2016,,labapplied,nomen,difficulty ,y,adult,longer,60,0.45,0.05,0.09,0.07,,,0.223606798
+Leiker et al.,2018,,lab,nomen,difficulty,n,adult,longer,60,,,0.14,0.07,,,
+Lemos et al.,2017,,applied,no ,observation,y,child,24,24,3.7,0.44,1.68,0.21,,,0.663324958
+Lessa & Chiviacowsky,2015,,applied ,nomen ,amount,y,older,48,36,0.72,0.11,0.71,0.11,0.8,0.12,0.331662479
+Lewthwaite et al.,2015 (Exp. 1),(Exp. 1),labapplied ,nomen,incidental,y,adult,24,24,1.07,0.18,0.78,0.17,,,0.424264069
+Lewthwaite et al.,2015 (Exp. 2),(Exp. 2),lab,nomen,incidental,y,adult,24,30,1,0.14,0.52,0.13,,,0.374165739
+Lim et al.,2015,,applied ,nomen,KP,y,adult,24,24,1.68,0.21,1.23,0.19,,,0.458257569
+Marques & Correa,2016,,applied ,nomen,KP,y,adult,48,70,0.59,0.08,,,,,0.282842712
+Marques et al.,2017,,applied ,nomen,KP,y,adult,24,30,3.95,0.39,,,,,0.6244998
+Norouzi et al.,2008,,lab,nomen,KR,y,adult,24,45,,,,,,,
+Nunes et al.,2019,,labapplied,no,KP,y,older,24,40,,,,,,,
+Ostrowski & Porter,2015,,lab,nomen ,KR,n,adult,24,80,0.11,0.07,0.65,0.07,0.4,0.07,0.264575131
+Patterson & Carter,2010,,lab,yes ,KR,y,adult,24,24,0.89,0.17,,,0.91,0.17,0.412310563
+Patterson & Lee,2010,,labapplied,yes,difficulty,y,adult,48,48,,,,,,,
+Patterson et al.,2013,,lab,yes,KR,y,adult,24,48,,,,,1.19,0.1,
+Patterson et al.,2011,,lab,yes,KR,y,adult,24,60,,,,,0.86,0.07,
+Post et al.,2016,,labapplied,no,KP,y,adult,24,44,0.14,0.09,0.16,0.09,0.92,0.1,0.3
+Post et al.,2011,,applied ,no,amount,y,adult,24,24,0.12,0.16,0.22,0.16,1.03,0.18,0.4
+Post et al.,2014,,applied ,nomen,amount,y,adult,24,30,0.88,0.14,0.15,0.13,,,0.374165739
+Rydberg,2011,,applied ,nomen,schedule ,n,adult,24,16,0.04,0.22,0.04,0.22,,,0.469041576
+Sanli & Patterson,2013 (adult),(adult),lab,no,schedule ,y,adult,24,24,,,,,,,
+Sanli & Patterson,2013 (children),(children),lab,no,schedule,y,child,24,24,,,,,,,
+Ste-Marie et al.,2013,,applied,no ,KP,y,child,24,60,0.82,0.07,,,,,0.264575131
+Tsai & Jwo,2015,,lab,yes,KR,y,adult,24,36,0.85,0.13,,,0.66,0.13,0.360555128
+von Lindern,2017,,lab,nomen,KR,n,adult,24,48,0.18,0.12,,,0.87,0.13,0.346410162
+Williams et al.,2017,,lab,yes,concurrent ,y,adult,24,29,0.27,0.13,,,,,0.360555128
+Wu & Magill,2011,,lab,no,schedule,y,adult,24,30,,,,,,,
+Wu,2007 (Exp. 1),(Exp. 1),labapplied,yes,schedule,n,adult,24,30,0.36,0.13,,,,,0.360555128
+Wulf & Adams,2014,,lab,no,schedule,y,adult,24,20,2.16,0.3,1.59,0.25,,,0.547722558
+Wulf & Toole,1999,,labapplied ,yes,assitive,y,adult,24,26,0.81,0.16,,,,,0.4
+Wulf et al.,2015,,labapplied ,no ,schedule,y,adult,24,68,0.63,0.06,0.57,0.06,0.65,0.06,0.244948974
+Wulf et al.,2001,,labapplied ,yes,assitive,y,adult,24,26,,,,,,,
+Wulf et al.,2017 (Exp. 1),(Exp. 1),labapplied,no ,incidental,y,adult,24,32,0.82,0.13,0.84,0.13,,,0.360555128
+Wulf et al.,2017 (Exp. 2),(Exp. 2),labapplied ,no ,incidental,y,adult,48,28,0.8,0.15,0.58,0.14,,,0.387298335
+Wulf et al.,2017 (Exp. 2),(Exp. 2),labapplied,no,observe,y,adult,48,28,0.72,0.14,0.38,0.14,,,0.374165739
+Wulf et al.,2017 (Exp. 2),(Exp. 2),labapplied,no,two,y,adult,48,42,0.76,0.11,0.48,0.11,,,0.331662479
+Wulf et al.,2005,,applied ,no,observe ,y,adult,longer,26,,,0.65,0.15,,,
