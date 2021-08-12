@@ -1,3 +1,4 @@
+
 ######################################################################
 ## Analysis script for the paper:                                   ##
 ## "Meta-analytic findings of the self-controlled motor learning    ##
@@ -5,7 +6,6 @@
 ## -- Mckay, Yantha, Hussien, Carter, and Ste-Marie                 ##
 ##                                                                  ##
 ## Created by Brad McKay (bradmckay8 [at] gmail [dot] com)          ##
-## Minor additions by Mike Carter                                   ##
 ######################################################################
 
 # Check if required packages for analyses are installed. If it is, it
