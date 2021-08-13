@@ -7,7 +7,7 @@ This repository contains the necessary files and code to reproduce the analyses,
 To reproduce the analyses, we strongly encourage opening the .Rproj file using RStudio. This will ensure all directory paths work on your system. All analyses and figures can be reproduced by running the *analysis.R*. This will source the other R scripts as necessary. When you run *analysis.R* it will check whether the necessary R packages are installed on your system and will load them. Any missing packages will be installed and then loaded into your R session.
 
 ## Repository tree
-
+```bash
 ├── data
 │   ├── data.csv
 │   ├── dataret.txt
@@ -40,3 +40,4 @@ To reproduce the analyses, we strongly encourage opening the .Rproj file using R
     ├── analysis.R
     ├── fig1.R
     └── pcurve_app4.06.R  
+```
