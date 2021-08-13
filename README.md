@@ -1,6 +1,6 @@
 # Meta-analytic findings of the self-controlled motor learning literature: Underpowered, biased, and lacking evidential value
 
-This repository contains the necessary files and code to reproduce the analyses, figures, and the manuscript. The current version of the manuscript can be read by opening the *self-controlled-motor-learning-meta-analysis-manuscript.pdf* file.
+This repository contains the necessary files and code to reproduce the analyses, figures, and the manuscript.
 
 ## Usage
 
