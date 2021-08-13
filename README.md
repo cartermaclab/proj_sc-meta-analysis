@@ -8,24 +8,35 @@ To reproduce the analyses, we strongly encourage opening the .Rproj file using R
 
 ## Repository tree
 
-├── 2021-02-01_sc-meta-analysis.pdf  
-├── data  
-│   ├── data.csv  
-│   ├── dataret.txt  
-│   ├── fig1_count-data.csv  
-│   └── preregrma.csv  
-├── docs  
-│   ├── figs  
-│   │   ├── fig1.pdf  
-│   │   ├── fig2.pdf  
-│   │   ├── fig3.pdf  
-│   │   └── fig4.pdf  
-│   ├── manuscript.pdf  
-│   ├── manuscript.tex  
-│   └── refs.bib  
-├── meta-analysis-self-controlled-motor-learning.Rproj  
-├── README.md  
-└── scripts  
-    ├── analysis.R  
-    ├── fig1.R  
-    └── pcurve_app4.06.R  
+├── data
+│   ├── data.csv
+│   ├── dataret.txt
+│   ├── fig1_count-data.csv
+│   └── preregrma.csv
+├── docs
+│   ├── refs.bib
+│   ├── revision
+│   │   ├── appendix_a.Rmd
+│   │   ├── appendix_a.tex
+│   │   ├── appendix_b.Rmd
+│   │   ├── appendix_b.tex
+│   │   ├── manuscript-revised.pdf
+│   │   ├── manuscript-revised.Rmd
+│   │   ├── manuscript-revised.tex
+│   │   ├── table-1.csv
+│   │   └── table-a1.csv
+│   └── submission
+│       ├── latexmkrc
+│       ├── manuscript.pdf
+│       └── manuscript.tex
+├── figs
+│   ├── fig1.pdf
+│   ├── fig2.pdf
+│   ├── fig3.pdf
+│   └── fig4.pdf
+├── meta-analysis-self-controlled-motor-learning.Rproj
+├── README.md
+└── scripts
+    ├── analysis.R
+    ├── fig1.R
+    └── pcurve_app4.06.R  
