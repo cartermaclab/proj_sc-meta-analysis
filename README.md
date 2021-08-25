@@ -26,6 +26,7 @@ To reproduce the analyses, we strongly encourage opening the .Rproj file using R
 │   │   ├── manuscript-revised.tex
 │   │   ├── table-1.csv
 │   │   └── table-a1.csv
+│   ├── r-references.bib
 │   └── submission
 │       ├── latexmkrc
 │       ├── manuscript.pdf
