@@ -239,7 +239,7 @@ The procedures followed to conduct this meta-analysis were pre-registered and ca
 \hypertarget{literature-search}{%
 \subsection{Literature search}\label{literature-search}}
 
-The literature search and data extraction were conducted by three authors (BM, ZY, JH) and one research assistant (HS) independently. The goal of the search was to identify all articles that met the inclusion criteria for the meta-analysis. Specifically, randomized experiments were subject to five criteria for inclusion: 1) A self-control group in which participants were asked to make at least one choice during practice, 2) a yoked group that experienced the same practice conditions as the self-controlled group, 3) a delayed \textasciitilde24-hour retention test or test with longer delay interval, 4) an objective measurement of motor performance, and 5) publication in a peer-reviewed journal or acceptance as part of a Master's or PhD thesis.
+The literature search and data extraction were conducted by three authors (BM, ZY, JH) and one research assistant (HS) independently. The goal of the search was to identify all articles that met the inclusion criteria for the meta-analysis. Specifically, randomized experiments were subject to five criteria for inclusion: 1) A self-control group in which participants were asked to make at least one choice during practice, 2) a yoked group that experienced the same practice conditions as the self-controlled group, 3) a delayed \textasciitilde24-hour retention test or test with longer delay interval, 4) an objective measurement of motor performance, and 5) publication in a peer-reviewed journal or acceptance as part of a Master's or PhD thesis. \textcolor{red}{The literature search was completed on August 2, 2019.}
 
 The search commenced at PubMed and Google Scholar with the following query: *self-control** OR *self-regulat** OR *self-direct** OR *learner-control** OR *learner-regulat** OR *learner-direct** OR *subject-control** OR *subject-regulat** OR *subject-direct** OR *performer-control** OR *performer-regulat** OR *performer-direct** AND *motor learning**. The query retrieved 9014 hits on PubMed and 98,600 hits on Google Scholar. Each researcher excluded hits based on title alone or title and abstract when necessary, and quit searching the databases at self-selected intervals following extended periods of excluding 100\% of search results. Following an initial run of searching databases, each researcher employed their own search strategies, including reviewing the reference sections of reviews and included articles, consulting the ``OPTIMAL'' theory website\footnote{The webpage link that was consulted (\url{https://optimalmotorlearning.com/index.php/did-you-know-that/}) is no longer available. A new webpage devoted to ``OPTIMAL" theory can be accessed using the following link: \url{https://gwulf.faculty.unlv.edu/optimal-motor-learning/}.}, and searching the ProQuest Thesis database.
 
@@ -444,7 +444,7 @@ Wulf et al. & 2005 & Applied & No & Observation & Adult & >48-hr & 26 & Yes\\
 \hypertarget{data-extraction}{%
 \subsection{Data extraction}\label{data-extraction}}
 
-The four researchers separated into pairs and half of the included experiments \textcolor{red}{were coded independently by one pair. The other half were coded independently by the other pair.} The coding included varied moderators, publication year, and sample size. Also Hedges' \emph{g} was calculated from reported statistics and sample size using the \texttt{compute.es} package (Re, 2013) in \texttt{R} (R Core Team, 2020). Effect sizes were calculated from means and standard deviations, test statistics like \emph{t} and \emph{F}, or from precisely reported \emph{p}-values. When covariates were included in the analysis, the correlation coefficient for the covariate - dependent measure relationship was required to calculate accurate effect sizes. Since this information is often not reported, authors were contacted and the information was requested. One effect size was calculated for each of three time points for each experiment: Acquisition, retention, and transfer.
+The four researchers separated into pairs and half of the included experiments \textcolor{red}{were coded independently by one pair. The other half were coded independently by the other pair.} The coding included varied moderators, publication year, and sample size. Also Hedges' \emph{g} was calculated from reported statistics and sample size using the \texttt{compute.es} package (Re, 2013) in \texttt{R} (R Core Team, 2021). Effect sizes were calculated from means and standard deviations, test statistics like \emph{t} and \emph{F}, or from precisely reported \emph{p}-values. When covariates were included in the analysis, the correlation coefficient for the covariate - dependent measure relationship was required to calculate accurate effect sizes. Since this information is often not reported, authors were contacted and the information was requested. One effect size was calculated for each of three time points for each experiment: Acquisition, retention, and transfer.
 
 The independent data extractions were compared and inconsistent results were highlighted. There was 89\% absolute agreement between pairs of coders on 1344 data points. For those with disagreement, one of the researchers from the other coding pair reviewed the relevant experiment to confirm the value to be used in the analysis.\footnote{On one occasion, the third researcher was unable to match either effect calculation, so the involved researchers discussed the issue, determined the source of the inconsistency, and asked a fourth researcher to recalculate the effect size with clear instructions for avoiding confusion. The source of inconsistency was simply a rounding error when combining multiple groups and the fourth researcher was able to corroborate the calculation.}
 
@@ -478,7 +478,7 @@ Moderators were determined based on the authors' collective knowledge of the sel
 \hypertarget{adjusting-for-selection-effects}{%
 \subsection{Adjusting for selection effects}\label{adjusting-for-selection-effects}}
 
-Selection bias in the motor learning literature is likely caused by filtering based on the statistical significance of results (Lohse, Buchanan, \& Miller, 2016). To assess and adjust for selection effects, the \texttt{R} package \texttt{weightr} (Coburn \& Vevea, 2017) was used to fit a Vevea-Hedges weight function model to the retention data (Vevea \& Hedges, 1995). The weight-function model estimates the true average effect, heterogeneity, and the probability that a non-significant result \textcolor{red}{survives censorship and is available for analysis}. Selection effects are modelled by a step function that divides the effects into two bins at one-tailed \emph{p} =.025, coinciding with a two-tailed \emph{p}-value of .05. The probability of a non-significant effect \textcolor{red}{surviving censorship to appear} in the model is estimated relative to the probability of observing a study with a significant effect. The selection-adjusted model was compared to the naïve random effects model with a likelihood ratio test. Better fit from an adjusted model suggests selection bias in the literature.
+Selection bias in the motor learning literature is likely caused by filtering based on the statistical significance of results (Lohse, Buchanan, \& Miller, 2016). To assess and adjust for selection effects, the \texttt{R} package \texttt{weightr} (K. M. Coburn \& Vevea, 2017) was used to fit a Vevea-Hedges weight function model to the retention data (Vevea \& Hedges, 1995). The weight-function model estimates the true average effect, heterogeneity, and the probability that a non-significant result \textcolor{red}{survives censorship and is available for analysis}. Selection effects are modelled by a step function that divides the effects into two bins at one-tailed \emph{p} =.025, coinciding with a two-tailed \emph{p}-value of .05. The probability of a non-significant effect \textcolor{red}{surviving censorship to appear} in the model is estimated relative to the probability of observing a study with a significant effect. The selection-adjusted model was compared to the naïve random effects model with a likelihood ratio test. Better fit from an adjusted model suggests selection bias in the literature.
 
 The adjusted estimate from the weight-function model was pre-registered as the primary estimate of the true average effect in this meta-analysis. Please note that while the weight-function model attempts to estimate the true effect of self-controlled learning after correcting for selection biases, the estimated effect cannot be considered definitive. Nevertheless, the adjusted estimate is likely less biased than the naïve random effects estimate (E. C. Carter, Schönbrodt, Gervais, \& Hilgard, 2019; Hong \& Reed, 2021; Kvarven, Strømland, \& Johannesson, 2020; Vevea \& Hedges, 1995). The difference between the estimates can be informative about the potential impact of selection biases, with larger disparities between models suggesting greater selection effects.
 
@@ -666,6 +666,11 @@ We would like to thank Heather Smith for her help with data extraction.
 \label{sec:sharing}
 All material, data, and scripts to reproduce our analyses and figures can be accessed here: \url{https://osf.io/qbg69}.
 
+\hypertarget{r-packages-used-in-this-project}{%
+\section{R packages used in this project}\label{r-packages-used-in-this-project}}
+
+R (Version 4.0.4; R Core Team, 2021) and the R-packages \emph{computees} (Re, 2013), \emph{dmetar} (Version 0.0.9000; Harrer, Cuijpers, Furukawa, \& Ebert, 2019), \emph{kableExtra} (Version 1.3.4; Zhu, 2021), \emph{meta} (Balduzzi, Rücker, \& Schwarzer, 2019; Version 4.19.0; Harrer, Cuijpers, Furukawa, \& Ebert, 2019; Viechtbauer, 2010), \emph{metafor} (Version 3.0.2; Viechtbauer, 2010), \emph{papaja} (Version 0.1.0.9997; Aust \& Barth, 2020), \emph{rcolorbrewer} (Neuwirth, 2014), \emph{robvis} (McGuinness, 2019), \emph{tidyverse} (Version 1.3.1; Wickham et al., 2019), and \emph{weightr} (Version 2.0.2; Kathleen M. Coburn \& Vevea, 2019).
+
 \hypertarget{conflict-of-interest}{%
 \section{Conflict of interest}\label{conflict-of-interest}}
 
@@ -710,6 +715,12 @@ Abdollahipour, R., Palomo Nieto, M., Psotta, R., \& Wulf, G. (2017). External fo
 
 \leavevmode\hypertarget{ref-Arsal2004-kf}{}%
 \textsuperscript{*} Arsal, G. (2004). \emph{Effects of external and {Self-Controlled} feedback schedule on retention of anticipation timing and ball throwing task} (Master's thesis). Middle East Technical University.
+
+\leavevmode\hypertarget{ref-R-papaja}{}%
+Aust, F., \& Barth, M. (2020). \emph{{papaja}: {Create} {APA} manuscripts with {R Markdown}}. Retrieved from \url{https://github.com/crsh/papaja}
+
+\leavevmode\hypertarget{ref-R-meta}{}%
+Balduzzi, S., Rücker, G., \& Schwarzer, G. (2019). How to perform a meta-analysis with {R}: A practical tutorial. \emph{Evidence-Based Mental Health}, (22), 153--160. Retrieved from \url{https://doi.org/10.1136/ebmental-2019-300117}
 
 \leavevmode\hypertarget{ref-Barros2010-pc}{}%
 \textsuperscript{*} Barros, J. A. (2010). \emph{The effects of practice schedule and {Self-Controlled} feedback manipulations on the acquisition and retention of motor skills} (PhD thesis). University of Tennessee, Knoxville.
@@ -792,6 +803,9 @@ Chua, L.-K., Wulf, G., \& Lewthwaite, R. (2018). Onward and upward: Optimizing m
 \leavevmode\hypertarget{ref-Coburn2017-hv}{}%
 Coburn, K. M., \& Vevea, J. L. (2017). Weightr: Estimating weight-function models for publication bias. \emph{R Package Version}, \emph{1}(2).
 
+\leavevmode\hypertarget{ref-R-weightr}{}%
+Coburn, Kathleen M., \& Vevea, J. L. (2019). \emph{Weightr: Estimating weight-function models for publication bias}. Retrieved from \url{https://CRAN.R-project.org/package=weightr}
+
 \leavevmode\hypertarget{ref-Couvillion2020-zw}{}%
 Couvillion, K. F., Bass, A. D., \& Fairbrother, J. T. (2020). Increased cognitive load during acquisition of a continuous task eliminates the learning effects of self-controlled knowledge of results. \emph{J. Sports Sci.}, \emph{38}(1), 94--99.
 
@@ -840,8 +854,8 @@ Halperin, I., Wulf, G., Vigotsky, A. D., Schoenfeld, B. J., \& Behm, D. G. (2018
 \leavevmode\hypertarget{ref-Hansen2011-rr}{}%
 \textsuperscript{*} Hansen, S., Pfeiffer, J., \& Patterson, J. T. (2011). Self-control of feedback during motor learning: Accounting for the absolute amount of feedback using a yoked group with self-control over feedback. \emph{J. Mot. Behav.}, \emph{43}(2), 113--119.
 
-\leavevmode\hypertarget{ref-Harrer2019-yv}{}%
-Harrer, M., Cuijpers, P., Furukawa, T. A., \& Ebert, D. D. (2019). Doing meta-analysis in r: A hand-on guide. \emph{PROTECT Lab Erlangen}.
+\leavevmode\hypertarget{ref-R-dmetar}{}%
+Harrer, M., Cuijpers, P., Furukawa, T., \& Ebert, D. D. (2019). \emph{Dmetar: Companion r package for the guide 'doing meta-analysis in r'}. Retrieved from \url{http://dmetar.protectlab.org/}
 
 \leavevmode\hypertarget{ref-Hartman2007-uv}{}%
 \textsuperscript{*} Hartman, J. M. (2007). Self-controlled use of a perceived physical assistance device during a balancing task. \emph{Percept. Mot. Skills}, \emph{104}(3 Pt 1), 1005--1016.
@@ -939,11 +953,17 @@ Lohse, K., Buchanan, T., \& Miller, M. (2016). Underpowered and overworked: Prob
 \leavevmode\hypertarget{ref-Marques2017-ue}{}%
 \textsuperscript{*} Marques, P. G., Thon, R. A., Espanhol, J., Tani, G., \& Corrêa, U. C. (2017). The intermediate learner's choice of self-as-a-model strategies and the eight-session practice in learning of the front crawl swim. \emph{Kinesiology}, \emph{49}(1).
 
+\leavevmode\hypertarget{ref-R-robvis}{}%
+McGuinness, L. A. (2019). \emph{Robvis: An r package and web application for visualising risk-of-bias assessments}. Retrieved from \url{https://github.com/mcguinlu/robvis}
+
 \leavevmode\hypertarget{ref-McKay2020-vj}{}%
 McKay, B., \& Ste-Marie, D. M. (2020). Autonomy support and reduced feedback frequency have trivial effects on learning and performance of a golf putting task. \emph{Hum. Mov. Sci.}, \emph{71}, 102612.
 
 \leavevmode\hypertarget{ref-McShane2016-by}{}%
 McShane, B. B., Böckenholt, U., \& Hansen, K. T. (2016). Adjusting for publication bias in {Meta-Analysis}: An evaluation of selection methods and some cautionary notes. \emph{Perspect. Psychol. Sci.}, \emph{11}(5), 730--749.
+
+\leavevmode\hypertarget{ref-R-rcolorbrewer}{}%
+Neuwirth, E. (2014). \emph{RColorBrewer: ColorBrewer palettes}. Retrieved from \url{https://CRAN.R-project.org/package=RColorBrewer}
 
 \leavevmode\hypertarget{ref-Norouzi2016-cx}{}%
 \textsuperscript{*} Norouzi, E., Hossini, F. S., \& Aghdasi, M. T. (2016). Effect of self-control feedback on the learning of a throwing task with emphasis on decision-making process. \emph{Open Science Journal of Psychology}, \emph{2}(6), 32.
@@ -984,10 +1004,10 @@ Patall, E. A., Cooper, H., \& Robinson, J. C. (2008). The effects of choice on i
 \leavevmode\hypertarget{ref-Post2014-yi}{}%
 \textsuperscript{*} Post, P. G., Fairbrother, J. T., Barros, J. A. C., \& Kulpa, J. D. (2014). {Self-Controlled} practice within a fixed time period facilitates the learning of a basketball set shot. \emph{Journal of Motor Learning and Development}, \emph{2}(1), 9--15.
 
-\leavevmode\hypertarget{ref-R-core}{}%
-R Core Team. (2020). \emph{R: A language and environment for statistical computing}. Vienna, Austria: R Foundation for Statistical Computing. Retrieved from \url{https://www.R-project.org/}
+\leavevmode\hypertarget{ref-R-base}{}%
+R Core Team. (2021). \emph{R: A language and environment for statistical computing}. Vienna, Austria: R Foundation for Statistical Computing. Retrieved from \url{https://www.R-project.org/}
 
-\leavevmode\hypertarget{ref-DelRe2013-es}{}%
+\leavevmode\hypertarget{ref-R-computees}{}%
 Re, A. C. D. (2013). Compute.es: Compute effect sizes. In \emph{R Package}. Retrieved from \url{https://cran.r-project.org/package=compute.es}
 
 \leavevmode\hypertarget{ref-Rydberg2011-zg}{}%
@@ -1041,11 +1061,14 @@ Vevea, J. L., \& Hedges, L. V. (1995). A general linear model for estimating eff
 \leavevmode\hypertarget{ref-Vevea2005-pv}{}%
 Vevea, J. L., \& Woods, C. M. (2005). Publication bias in research synthesis: Sensitivity analysis using a priori weight functions. \emph{Psychol. Methods}, \emph{10}(4), 428--443.
 
-\leavevmode\hypertarget{ref-Viechtbauer2010-ss}{}%
-Viechtbauer, W. (2010). Conducting meta-analyses in {R} with the {metafor} package. \emph{J. Stat. Softw.}, \emph{36}(3), 1--48.
+\leavevmode\hypertarget{ref-R-metafor}{}%
+Viechtbauer, W. (2010). Conducting meta-analyses in {R} with the {metafor} package. \emph{Journal of Statistical Software}, \emph{36}(3), 1--48. Retrieved from \url{https://doi.org/10.18637/jss.v036.i03}
 
 \leavevmode\hypertarget{ref-Wicherts2016-qz}{}%
 Wicherts, J. M., Veldkamp, C. L. S., Augusteijn, H. E. M., Bakker, M., Aert, R. C. M. van, \& Assen, M. A. L. M. van. (2016). Degrees of freedom in planning, running, analyzing, and reporting psychological studies: A checklist to avoid p-hacking. \emph{Front. Psychol.}, \emph{7}, 1832.
+
+\leavevmode\hypertarget{ref-R-tidyverse}{}%
+Wickham, H., Averick, M., Bryan, J., Chang, W., McGowan, L. D., François, R., \ldots{} Yutani, H. (2019). Welcome to the {tidyverse}. \emph{Journal of Open Source Software}, \emph{4}(43), 1686. \url{https://doi.org/10.21105/joss.01686}
 
 \leavevmode\hypertarget{ref-Williams2017-pj}{}%
 \textsuperscript{*} Williams, C. K., Tseung, V., \& Carnahan, H. (2017). {Self-Control} of haptic assistance for motor learning: Influences of frequency and opinion of utility. \emph{Front. Psychol.}, \emph{8}, 2082.
@@ -1094,6 +1117,9 @@ Wulf, Gabriele, Shea, C., \& Lewthwaite, R. (2010). Motor skill learning and per
 
 \leavevmode\hypertarget{ref-Yantha2019-dt}{}%
 Yantha, Z. (2019). \emph{The recommendation for learners to be provided with control over their feedback schedule is questioned in a self-controlled learning paradigm} (Master's thesis). Universit{é} d'Ottawa / University of Ottawa.
+
+\leavevmode\hypertarget{ref-R-kableExtra}{}%
+Zhu, H. (2021). \emph{kableExtra: Construct complex table with 'kable' and pipe syntax}. Retrieved from \url{https://CRAN.R-project.org/package=kableExtra}
 
 \end{CSLReferences}
 
