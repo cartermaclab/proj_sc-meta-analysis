@@ -8,33 +8,42 @@
 ## Created by Brad McKay (bradmckay8 [at] gmail [dot] com)          ##
 ######################################################################
 
-# Check if required packages for analyses are installed. If it is, it
-# will be loaded. If any are not, the missing package(s) will be
-# installed and then loaded.
+# Required libraries (see lines 23-26 for information on having these
+# packages automatically installed if you do not already have them on
+# your machine)
+library(tidyverse)
+library(dmetar)
+library(meta)
+library(metafor)
+library(RColorBrewer)
+library(robvis)
+library(weightr)
+
+
+# The code below will check whether the required packages are already
+# installed. If not installed, then it will install it and load it
+# for you. To run the code, uncomment from lines 29-38 and lines 41-46.
+# CRAN packages
 
 # CRAN packages
-pkgs = c("devtools", "tidyverse", "metafor", "meta", "weightr")
-pkgs_check <- lapply(
-  pkgs,
-  FUN = function(x) {
-    if (!require(x, character.only = TRUE)) {
-      install.packages(x, dependencies = TRUE)
-      library(x, character.only = TRUE)
-    }
-  }
-)
+# pkgs = c("devtools", "tidyverse", "metafor", "meta", "weightr", "robvis")
+# pkgs_check <- lapply(
+#   pkgs,
+#   FUN = function(x) {
+#     if (!require(x, character.only = TRUE)) {
+#       install.packages(x, dependencies = TRUE)
+#       library(x, character.only = TRUE)
+#     }
+#   }
+# )
 
 # Github packages
-if (!require(dmetar)) {
-  devtools::install_github("MathiasHarrer/dmetar")
-  library(dmetar)
-} else {
-    library(dmetar)
-  }
-
-# Run to manually verify all required packages are loaded
-# Look in console output
-(.packages())
+# if (!require(dmetar)) {
+#   devtools::install_github("MathiasHarrer/dmetar")
+#   library(dmetar)
+# } else {
+#     library(dmetar)
+#   }
 
 #--------------------------
 
@@ -110,7 +119,14 @@ rma(g, v, data = preregrma)
 source("scripts/fig1.R")
 fig1_plot
 
-## Figure 2: Forest plot
+## Figure 2: Risk of bias figure
+data_rob1 <- read.csv("data/rob_dat.csv")
+
+robvis::rob_summary(data = data_rob1, tool = "ROB1",
+                    overall = FALSE, weighted = FALSE,
+                    colour = c("#1B9E77","#D95F02","#666666"))
+
+## Figure 3: Forest plot
 ## Run mixed-effects analysis with publication moderator
 scm <- rma(ret_g, ret_v, mods = ~(pub), data = mydata, slab =
              paste(Author, Year, sep = ", "), measure = "SMD")
@@ -122,10 +138,17 @@ text(-7.75, 54, "Author(s) and Year", pos = 4) # Label column
 text(2.6, -0.5, "Favours Self-Control") # Label directions of x-axis
 text(-2, -0.5, "Favours Yoked") # Label directions of x-axis
 
-## Figure 3: Funnel plot was generated using the online shiny app which can
-## be accessed at: https://vevealab.shinyapps.io/WeightFunctionModel/
+## Figure 4: Funnel plot
+retres <- rma(ret_g, ret_v, data = mydata)
 
-## Figure 4: P-curve plot of significant results
+funnel.rma(retres, refline = 0, level = c(90, 95, 99), shade = c("white", "gray55", 'gray75'), legend = TRUE)
+
+## Figure 4_old: Funnel plot was generated using the online shiny app which
+## can be accessed at: https://vevealab.shinyapps.io/WeightFunctionModel/
+## or the shiny app can be run locally using weightr::shiny_weightr()
+## The plot was generated using the ret_g and ret_v data.
+
+## Figure 5: P-curve plot of significant results
 ## P-curve plot can be found in the data folder or can be reproduced using
 ## the online p-curve app which can be accessed at: http://p-curve.com/app4/
 ## You will need to open dataret.txt and then copy the data into the box
