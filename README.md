@@ -12,7 +12,8 @@ To reproduce the analyses, we strongly encourage opening the .Rproj file using R
 │   ├── data.csv
 │   ├── dataret.txt
 │   ├── fig1_count-data.csv
-│   └── preregrma.csv
+│   ├── preregrma.csv
+│   └── rob_dat.csv
 ├── docs
 │   ├── refs.bib
 │   ├── revision
@@ -33,11 +34,13 @@ To reproduce the analyses, we strongly encourage opening the .Rproj file using R
 │   ├── fig1.pdf
 │   ├── fig2.pdf
 │   ├── fig3.pdf
-│   └── fig4.pdf
+│   ├── fig4_old.pdf
+│   ├── fig4.pdf
+│   └── fig5.pdf
 ├── meta-analysis-self-controlled-motor-learning.Rproj
 ├── README.md
 └── scripts
     ├── analysis.R
     ├── fig1.R
-    └── pcurve_app4.06.R  
+    └── pcurve_app4.06.R
 ```
