@@ -4,8 +4,8 @@ shorttitle        : "Meta-analysis of self-controlled research"
 author: 
   - name          : "Brad McKay"
     affiliation   : "1,2"
-    corresponding : yes    # Define only one corresponding author
-    address       : "1280 Main Street West, Ivor Wynne Centre Room AB-131 A1, McMaster University, Hamilton ON Canada, L8S 4K1"
+    corresponding : no    # Define only one corresponding author
+    address       : "1280 Main St W, IWC AB-131 A1, McMaster University, Hamilton ON Canada, L8S 4K1"
     email         : "bradmckay8@gmail.com"
   - name          : "Zachary D. Yantha"
     affiliation   : "1"
@@ -18,12 +18,14 @@ author:
 
 affiliation:
   - id            : "1"
-    institution   : "School of Human Kinetics, University of Ottawa"
+    institution   : "School of Human Kinetics University of Ottawa"
   - id            : "2"
-    institution   : "Department of Kinesiology, McMaster University"
+    institution   : "Department of Kinesiology McMaster University"
 
 authornote: |
-  \vspace{-3em}
+  Submitted to *Meta-Psychology*. Participate in open peer review by commenting through hypothes.is directly on this preprint. The full editorial process of articles under review at *Meta-Psychology* can be found here: https://tinyurl.com/mp-submissions. You will find this preprint by searching for the first authors name.
+  
+  \newpage
   \addORCIDlink{Brad McKay}{0000-0002-7408-2323} \newline
   \indent\addORCIDlink{Julia Hussien}{0000-0001-7434-228X}  
   \addORCIDlink{Michael J. Carter}{0000-0002-0675-4271}  
