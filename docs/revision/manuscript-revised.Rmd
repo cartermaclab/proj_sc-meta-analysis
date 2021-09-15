@@ -324,33 +324,3 @@ References marked with an asterisk (*) indicate studies included in the meta-ana
 <!-- <div id="refs" custom-style="Bibliography"></div> -->
 
 \endgroup
-
-```{r echo = FALSE, results = 'asis', cache = FALSE}
-papaja::render_appendix('appendix_a.Rmd')
-```
-
-
-```{r echo = FALSE, results = 'asis', cache = FALSE}
-papaja::render_appendix('appendix_b.Rmd')
-```
-
-
-```{r echo = FALSE, results = 'asis', cache = FALSE}
-papaja::render_appendix('appendix_a.Rmd')
-```
-
-
-```{r echo = FALSE, results = 'asis', cache = FALSE}
-papaja::render_appendix('appendix_b.Rmd')
-```
-
-
-```{r echo = FALSE, results = 'asis', cache = FALSE}
-papaja::render_appendix('appendix_a.Rmd')
-```
-
-
-```{r echo = FALSE, results = 'asis', cache = FALSE}
-papaja::render_appendix('appendix_b.Rmd')
-```
-

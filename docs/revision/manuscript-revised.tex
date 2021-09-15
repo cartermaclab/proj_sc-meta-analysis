@@ -5,10 +5,14 @@
 \documentclass[
   english,
   man,floatsintext]{apa7}
+\title{Meta-analytic findings of the self-controlled motor learning literature: Underpowered, biased, and lacking evidential value}
+\author{Brad McKay\textsuperscript{1,2}, Zachary D. Yantha\textsuperscript{1}, Julia Hussien\textsuperscript{1}, Michael J. Carter\textsuperscript{2}, \& Diane M. Ste-Marie\textsuperscript{1}}
+\date{}
+
 \usepackage{amsmath,amssymb}
 \usepackage{lmodern}
-\usepackage{ifxetex,ifluatex}
-\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+\usepackage{iftex}
+\ifPDFTeX
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
@@ -70,6 +74,29 @@
   \let\oldsubparagraph\subparagraph
   \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
 \fi
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newlength{\cslentryspacingunit} % times entry-spacing
+\setlength{\cslentryspacingunit}{\parskip}
+\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
+ {% don't indent paragraphs
+  \setlength{\parindent}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+  \let\oldpar\par
+  \def\par{\hangindent=\cslhangindent\oldpar}
+  \fi
+  % set entry spacing
+  \setlength{\parskip}{#2\cslentryspacingunit}
+ }%
+ {}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{#1\hfill\break}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 % Manuscript styling
 \usepackage{upgreek}
 \captionsetup{font=singlespacing,justification=justified}
@@ -135,7 +162,7 @@
 \usepackage{pdflscape}
 \pagewiselinenumbers
 \raggedbottom
-\ifxetex
+\ifXeTeX
   % Load polyglossia as late as possible: uses bidi with RTL langages (e.g. Hebrew, Arabic)
   \usepackage{polyglossia}
   \setmainlanguage[]{english}
@@ -145,33 +172,9 @@
 \let\LanguageShortHands\languageshorthands
 \def\languageshorthands#1{}
 \fi
-\ifluatex
+\ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
-\newlength{\cslhangindent}
-\setlength{\cslhangindent}{1.5em}
-\newlength{\csllabelwidth}
-\setlength{\csllabelwidth}{3em}
-\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
- {% don't indent paragraphs
-  \setlength{\parindent}{0pt}
-  % turn on hanging indent if param 1 is 1
-  \ifodd #1 \everypar{\setlength{\hangindent}{\cslhangindent}}\ignorespaces\fi
-  % set entry spacing
-  \ifnum #2 > 0
-  \setlength{\parskip}{#2\baselineskip}
-  \fi
- }%
- {}
-\usepackage{calc}
-\newcommand{\CSLBlock}[1]{#1\hfill\break}
-\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
-\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
-\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
-
-\title{Meta-analytic findings of the self-controlled motor learning literature: Underpowered, biased, and lacking evidential value}
-\author{Brad McKay\textsuperscript{1,2}, Zachary D. Yantha\textsuperscript{1}, Julia Hussien\textsuperscript{1}, Michael J. Carter\textsuperscript{2}, \& Diane M. Ste-Marie\textsuperscript{1}}
-\date{}
 
 
 \authornote{
@@ -201,7 +204,7 @@ The self-controlled motor learning literature consists of experiments that compa
 \begin{document}
 \maketitle
 
-Asking learners to control any aspect of their practice environment has come to be known as self-controlled practice in the motor learning literature (Sanli, Patterson, Bray, \& Lee, 2013; Gabriele Wulf \& Lewthwaite, 2016). The first published experiments to test self-controlled learning asked learners to control their augmented feedback schedule (Janelle, Barba, Frehlich, Tennant, \& Cauraugh, 1997; Janelle, Kim, \& Singer, 1995). For example, in an experiment by Janelle, Barba, Frehlich, Tennant, and Cauraugh (1997), participants practiced throwing tennis balls at a target with their non-dominant hand. The practice period occurred over two separate days. Participants were assigned to one of four experimental groups (\emph{n} = 12): Self-controlled knowledge of performance, yoked-to-self-control, summary knowledge of performance after every five trials, and a knowledge of results only control group. The self-controlled group could request knowledge of performance whenever they wanted it, while each yoked group participant was matched with a self-control group counterpart and received knowledge of performance on the same schedule. The experimenter evaluated the participants' throws, identified the most critical error in their throwing form, and provided knowledge of performance via video feedback, along with directing attention to the error and giving prescriptive feedback. During a delayed-retention test, the accuracy, form, and speed of the throw were assessed. The results indicated that the self-control group threw more accurately and with better form than all other groups on the retention test. The self-control and yoked groups did not significantly differ in throwing speed, but the control group threw faster than the self-control group on the second retention block. The results were interpreted as evidence that the participants provided with choice were able to process information more efficiently than their counterparts who received a fixed schedule of feedback.
+Asking learners to control any aspect of their practice environment has come to be known as self-controlled practice in the motor learning literature (Sanli, Patterson, Bray, \& Lee, 2013; Gabriele Wulf \& Lewthwaite, 2016). The first published experiments to test self-controlled learning asked learners to control their augmented feedback schedule (Janelle, Barba, Frehlich, Tennant, \& Cauraugh, 1997; Janelle, Kim, \& Singer, 1995). For example, in an experiment by Janelle et al. (1997), participants practiced throwing tennis balls at a target with their non-dominant hand. The practice period occurred over two separate days. Participants were assigned to one of four experimental groups (\emph{n} = 12): Self-controlled knowledge of performance, yoked-to-self-control, summary knowledge of performance after every five trials, and a knowledge of results only control group. The self-controlled group could request knowledge of performance whenever they wanted it, while each yoked group participant was matched with a self-control group counterpart and received knowledge of performance on the same schedule. The experimenter evaluated the participants' throws, identified the most critical error in their throwing form, and provided knowledge of performance via video feedback, along with directing attention to the error and giving prescriptive feedback. During a delayed-retention test, the accuracy, form, and speed of the throw were assessed. The results indicated that the self-control group threw more accurately and with better form than all other groups on the retention test. The self-control and yoked groups did not significantly differ in throwing speed, but the control group threw faster than the self-control group on the second retention block. The results were interpreted as evidence that the participants provided with choice were able to process information more efficiently than their counterparts who received a fixed schedule of feedback.
 
 
 
@@ -214,19 +217,19 @@ Asking learners to control any aspect of their practice environment has come to 
 \caption{Number of self-controlled learning experiments meeting the inclusion criteria by year.}\label{fig:fig1}
 \end{figure}
 
-Figure \ref{fig:fig1} shows that the number of experiments comparing self-controlled groups to yoked groups has been increasing since the original experiments by Janelle and his colleagues (1997; 1995). Researchers have experimented with giving learners control over a variety of variables in the practice environment. A qualitative assessment of the literature suggests that self-control is generally beneficial regardless of choice-type (Gabriele Wulf \& Lewthwaite, 2016). For example, self-control has been effective when participants have been provided choice over what can be considered instructionally-relevant variables, such as: knowledge of results (Patterson \& Carter, 2010), knowledge of performance (Lim et al., 2015), concurrent feedback (Huet, Camachon, Fernandez, Jacobs, \& Montagne, 2009), use of an assistive device (G. Wulf, Clauss, Shea, \& Whitacre, 2001), observation of a skilled model (Lemos, Wulf, Lewthwaite, \& Chiviacowsky, 2017), practice schedule (Will F. W. Wu \& Magill, 2011), practice volume (Lessa \& Chiviacowsky, 2015), and task difficulty (Leiker et al., 2016). Additionally, self-controlled benefits have also been found for instructionally-irrelevant variables, such as: the colour of various objects in the practice environment (Gabriele Wulf et al., 2018), other decorative choices (Iwatsuki, Navalta, \& Wulf, 2019), and the choice of what to do after the retention test is complete (Lewthwaite, Chiviacowsky, Drews, \& Wulf, 2015).
+Figure \ref{fig:fig1} shows that the number of experiments comparing self-controlled groups to yoked groups has been increasing since the original experiments by Janelle and his colleagues (1997, 1995). Researchers have experimented with giving learners control over a variety of variables in the practice environment. A qualitative assessment of the literature suggests that self-control is generally beneficial regardless of choice-type (Gabriele Wulf \& Lewthwaite, 2016). For example, self-control has been effective when participants have been provided choice over what can be considered instructionally-relevant variables, such as: knowledge of results (Patterson \& Carter, 2010), knowledge of performance (Lim et al., 2015), concurrent feedback (Huet, Camachon, Fernandez, Jacobs, \& Montagne, 2009), use of an assistive device (G. Wulf, Clauss, Shea, \& Whitacre, 2001), observation of a skilled model (Lemos, Wulf, Lewthwaite, \& Chiviacowsky, 2017), practice schedule (Will F. W. Wu \& Magill, 2011), practice volume (Lessa \& Chiviacowsky, 2015), and task difficulty (Leiker et al., 2016). Additionally, self-controlled benefits have also been found for instructionally-irrelevant variables, such as: the colour of various objects in the practice environment (Gabriele Wulf et al., 2018), other decorative choices (Iwatsuki, Navalta, \& Wulf, 2019), and the choice of what to do after the retention test is complete (Lewthwaite, Chiviacowsky, Drews, \& Wulf, 2015).
 
-Despite the widespread optimism that self-controlled practice is useful for enhancing motor learning, researchers continue to debate the underlying mechanisms responsible for the effect (M. J. Carter \& Ste-Marie, 2017b; Gabriele Wulf et al., 2018). Beginning with Janelle, Kim, and Singer (1995), both motivational and information processing mechanisms were proposed as possible explanations for self-control benefits. Researchers have since supported these two mechanisms and, from a motivational perspective, have posited that self-control enhances confidence (Chiviacowsky, Wulf, \& Lewthwaite, 2012; Janelle, Kim, \& Singer, 1995; Gabriele Wulf \& Lewthwaite, 2016) and satisfies the basic psychological need for autonomy (Sanli, Patterson, Bray, \& Lee, 2013; Gabriele Wulf \& Lewthwaite, 2016), motivating motor performance and learning enhancement. Most self-controlled learning experiments, however, have involved participants making choices over potentially informative variables, which could act as a confounding variable. Citing this potential motivational/informational confound, Lewthwaite, Chiviacowsky, Drews, and Wulf (2015) experimented with providing instructionally-irrelevant choices, such as the colour of the golf balls to putt, the painting to hang on the wall, and what to do following the retention test. Lewthwaite and her colleagues reasoned that information processing explanations could not account for benefits due to these incidental choices, and instead motivational factors would be more likely. Consistent with the motivational hypothesis, participants exhibited significantly greater motor learning on a golf putting task (Experiment 1) and on a balance task (Experiment 2). Subsequently, several experiments have reported benefits with instructionally-irrelevant choices (Abdollahipour, Palomo Nieto, Psotta, \& Wulf, 2017; Chua, Wulf, \& Lewthwaite, 2018; Halperin, Chapman, Martin, Lewthwaite, \& Wulf, 2017; Iwatsuki, Navalta, \& Wulf, 2019; Gabriele Wulf, Chiviacowsky, \& Cardozo, 2014; Gabriele Wulf et al., 2018), further reinforcing this motivational perspective.
+Despite the widespread optimism that self-controlled practice is useful for enhancing motor learning, researchers continue to debate the underlying mechanisms responsible for the effect (M. J. Carter \& Ste-Marie, 2017b; Gabriele Wulf et al., 2018). Beginning with Janelle et al. (1995), both motivational and information processing mechanisms were proposed as possible explanations for self-control benefits. Researchers have since supported these two mechanisms and, from a motivational perspective, have posited that self-control enhances confidence (Chiviacowsky, Wulf, \& Lewthwaite, 2012; Janelle et al., 1995; Gabriele Wulf \& Lewthwaite, 2016) and satisfies the basic psychological need for autonomy (Sanli et al., 2013; Gabriele Wulf \& Lewthwaite, 2016), motivating motor performance and learning enhancement. Most self-controlled learning experiments, however, have involved participants making choices over potentially informative variables, which could act as a confounding variable. Citing this potential motivational/informational confound, Lewthwaite et al. (2015) experimented with providing instructionally-irrelevant choices, such as the colour of the golf balls to putt, the painting to hang on the wall, and what to do following the retention test. Lewthwaite and her colleagues reasoned that information processing explanations could not account for benefits due to these incidental choices, and instead motivational factors would be more likely. Consistent with the motivational hypothesis, participants exhibited significantly greater motor learning on a golf putting task (Experiment 1) and on a balance task (Experiment 2). Subsequently, several experiments have reported benefits with instructionally-irrelevant choices (Abdollahipour, Palomo Nieto, Psotta, \& Wulf, 2017; Chua, Wulf, \& Lewthwaite, 2018; Halperin, Chapman, Martin, Lewthwaite, \& Wulf, 2017; Iwatsuki et al., 2019; Gabriele Wulf, Chiviacowsky, \& Cardozo, 2014; Gabriele Wulf et al., 2018), further reinforcing this motivational perspective.
 
-A contrasting line of research has been reported by Carter and his colleagues (2014; 2017a, 2017b) in which informational factors, the second dominant perspective, are given more weight as an explanatory variable. In one experiment by M. J. Carter, Carlsen, and Ste-Marie (2014), self-control participants were provided with choice over receiving knowledge of results, but divided into three experimental groups; those who could make their knowledge of results decision: before the trial, after the trial, or both (they would decide before, but could change their mind following the trial). Timing of the choice significantly attenuated the self-control benefit. While the self-after and self-both groups exhibited learning advantages relative to their yoked counterparts, the self-before group displayed no such advantage. The argument proffered by the researchers was that there was more informational value to be gained from knowledge of results requested after a trial than when it had to be requested before the outcome of the trial occurred (also see Chiviacowsky \& Wulf, 2005).
+A contrasting line of research has been reported by Carter and his colleagues (2014; 2017a, 2017b) in which informational factors, the second dominant perspective, are given more weight as an explanatory variable. In one experiment by M. J. Carter et al. (2014), self-control participants were provided with choice over receiving knowledge of results, but divided into three experimental groups; those who could make their knowledge of results decision: before the trial, after the trial, or both (they would decide before, but could change their mind following the trial). Timing of the choice significantly attenuated the self-control benefit. While the self-after and self-both groups exhibited learning advantages relative to their yoked counterparts, the self-before group displayed no such advantage. The argument proffered by the researchers was that there was more informational value to be gained from knowledge of results requested after a trial than when it had to be requested before the outcome of the trial occurred (also see Chiviacowsky \& Wulf, 2005).
 
 In another experiment (M. J. Carter \& Ste-Marie, 2017a), asking learners to complete an interpolated activity in the interval preceding their choice of whether to receive knowledge of results significantly attenuated the self-control benefit (also see Couvillion, Bass, \& Fairbrother, 2020; Woodard \& Fairbrother, 2020). As a final example, M. J. Carter and Ste-Marie (2017b) compared an instructionally-relevant choice group (i.e., when to receive knowledge of results) to an instructionally-irrelevant choice group (i.e., which video game to play after retention and which colour arm wrap to wear while practicing). Unlike the experiment by Wulf and colleagues (2018), Carter and Ste-Marie found that instructionally-relevant choices were more effective than task-irrelevant choices. Overall, they have used these different findings to tie self-controlled learning benefits to information-processing activities of the learner and, in particular, those related to the processing of intrinsic feedback (e.g., M. J. Carter \& Ste-Marie, 2017a; Chiviacowsky \& Wulf, 2005) and the provided knowledge of results (e.g., Grand et al., 2015).
 
 In the present research, these different viewpoints concerning the mechanisms of self-controlled learning advantages were examined via meta-analysis with choice-type included as a moderator. The logic was that the motivational and informational perspectives would have different predictions. More specifically, from a motivation hypothesis, no moderating effect of choice-type on motor learning would be expected. In contrast, smaller effects for irrelevant-choice type, as compared to relevant-choice types, would be expected from the information-processing perspective.
 
-Beyond this interest in the possible theoretical mechanisms, a more important question addressed was whether there is in fact evidential value for the self-controlled learning benefit. This is of relevance because the current consensus in the field is that self-controlled practice is generally more effective than yoked practice (for reviews see Sanli, Patterson, Bray, \& Lee, 2013; Ste-Marie, Carter, \& Yantha, 2019; Gabriele Wulf \& Lewthwaite, 2016). Reflecting this confidence in its benefits for motor learning, researchers have recommended adoption of self-control protocols in varied settings, such as medical training (Brydges, Carnahan, Safir, \& Dubrowski, 2009; Jowett, LeBlanc, Xeroulis, MacRae, \& Dubrowski, 2007; Gabriele Wulf, Shea, \& Lewthwaite, 2010), physiotherapy (Hemayattalab, Arabameri, Pourazar, Ardakani, \& Kashefi, 2013; Gabriele Wulf, 2007), music pedagogy (Gabriele Wulf \& Mornell, 2008), strength and conditioning (Halperin, Wulf, Vigotsky, Schoenfeld, \& Behm, 2018), and sports training (Janelle, Kim, \& Singer, 1995; Sigrist, Rauter, Riener, \& Wolf, 2013).
+Beyond this interest in the possible theoretical mechanisms, a more important question addressed was whether there is in fact evidential value for the self-controlled learning benefit. This is of relevance because the current consensus in the field is that self-controlled practice is generally more effective than yoked practice (for reviews see Sanli et al., 2013; Ste-Marie, Carter, \& Yantha, 2019; Gabriele Wulf \& Lewthwaite, 2016). Reflecting this confidence in its benefits for motor learning, researchers have recommended adoption of self-control protocols in varied settings, such as medical training (Brydges, Carnahan, Safir, \& Dubrowski, 2009; Jowett, LeBlanc, Xeroulis, MacRae, \& Dubrowski, 2007; Gabriele Wulf, Shea, \& Lewthwaite, 2010), physiotherapy (Hemayattalab, Arabameri, Pourazar, Ardakani, \& Kashefi, 2013; Gabriele Wulf, 2007), music pedagogy (Gabriele Wulf \& Mornell, 2008), strength and conditioning (Halperin, Wulf, Vigotsky, Schoenfeld, \& Behm, 2018), and sports training (Janelle et al., 1995; Sigrist, Rauter, Riener, \& Wolf, 2013).
 
-Problematic though is that recent, high-powered experiments with pre-registered analysis plans have failed to observe motor learning or performance benefits with self-control protocols (Grand, Daou, Lohse, \& Miller, 2017; McKay \& Ste-Marie, 2020; St. Germain et al., 2021; Yantha, 2019). Against the backdrop of the so-called replication crisis in psychology (Open Science Collaboration, 2015), there is reason for pause when evaluating the ostensible benefits of self-controlled learning. Further, Lohse, Buchanan, and Miller (2016) have raised concerns about publication bias, uncorrected multiple comparisons, \emph{p}-hacking, and other selection effects in the motor learning literature. Therefore, to address the impact of selection effects on estimates of the self-controlled learning effect, a weight function model (E. C. Carter, Schönbrodt, Gervais, \& Hilgard, 2019; Hedges \& Vevea, 1996; McShane, Böckenholt, \& Hansen, 2016; Vevea \& Hedges, 1995; Vevea \& Woods, 2005) with a one-tailed \emph{p}-value cutpoint of .025 was fit to the dataset of effects to provide a pre-registered adjusted estimate of the overall self-controlled learning effect. Even the adjusted estimate is biased if the data generating processes are biased in ways not captured by the assumptions of the model, so further sensitivity analyses were conducted to estimate the average effect of self-control after correcting for selection effects (E. C. Carter, Schönbrodt, Gervais, \& Hilgard, 2019; Vevea \& Woods, 2005). In parallel, in an effort to investigate the presence of evidential value in the literature, significant results were subjected to a \emph{p}-curve analysis (Simonsohn, Nelson, \& Simmons, 2014a; Simonsohn, Simmons, \& Nelson, 2015). The \emph{p}-curve analysis focuses exclusively on significant results and therefore is not affected by publication bias.
+Problematic though is that recent, high-powered experiments with pre-registered analysis plans have failed to observe motor learning or performance benefits with self-control protocols (Grand, Daou, Lohse, \& Miller, 2017; McKay \& Ste-Marie, 2020; St. Germain et al., 2021; Yantha, 2019). Against the backdrop of the so-called replication crisis in psychology (Open Science Collaboration, 2015), there is reason for pause when evaluating the ostensible benefits of self-controlled learning. Further, Lohse, Buchanan, and Miller (2016) have raised concerns about publication bias, uncorrected multiple comparisons, \emph{p}-hacking, and other selection effects in the motor learning literature. Therefore, to address the impact of selection effects on estimates of the self-controlled learning effect, a weight function model (E. C. Carter, Schönbrodt, Gervais, \& Hilgard, 2019; Hedges \& Vevea, 1996; McShane, Böckenholt, \& Hansen, 2016; Vevea \& Hedges, 1995; Vevea \& Woods, 2005) with a one-tailed \emph{p}-value cutpoint of .025 was fit to the dataset of effects to provide a pre-registered adjusted estimate of the overall self-controlled learning effect. Even the adjusted estimate is biased if the data generating processes are biased in ways not captured by the assumptions of the model, so further sensitivity analyses were conducted to estimate the average effect of self-control after correcting for selection effects (E. C. Carter et al., 2019; Vevea \& Woods, 2005). In parallel, in an effort to investigate the presence of evidential value in the literature, significant results were subjected to a \emph{p}-curve analysis (Simonsohn, Nelson, \& Simmons, 2014b; Simonsohn, Simmons, \& Nelson, 2015). The \emph{p}-curve analysis focuses exclusively on significant results and therefore is not affected by publication bias.
 
 In sum, the objectives of this meta-analysis were to estimate the true average effect of self-controlled learning and evaluate the evidential value of the self-controlled learning literature. Bias resulting from selective publication was addressed with weight function and \emph{p}-curve models and effect size estimates were adjusted accordingly. A key theoretical question \textcolor{red}{related to the underlying mechanisms of putative self-controlled learning advantages (motivational versus informational influences)} was also addressed through moderator analyses, but, to anticipate, inferences will depend on the reliability of the evidence overall. Finally, sensitivity analyses were conducted in addition to pre-registered analyses in an effort to understand the extent that our conclusions depended on the modeling techniques and assumptions adopted.
 
@@ -243,7 +246,7 @@ The procedures followed to conduct this meta-analysis were pre-registered and ca
 
 The literature search and data extraction were conducted by three authors (BM, ZY, JH) and one research assistant (HS) independently. The goal of the search was to identify all articles that met the inclusion criteria for the meta-analysis. Specifically, randomized experiments were subject to five criteria for inclusion: 1) A self-control group in which participants were asked to make at least one choice during practice, 2) a yoked group that experienced the same practice conditions as the self-controlled group, 3) a delayed \textasciitilde24-hour retention test or test with longer delay interval, 4) an objective measurement of motor performance, and 5) publication in a peer-reviewed journal or acceptance as part of a Master's or PhD thesis. \textcolor{red}{The literature search was completed on August 2, 2019.}
 
-The search commenced at PubMed and Google Scholar with the following query: *self-control** OR *self-regulat** OR *self-direct** OR *learner-control** OR *learner-regulat** OR *learner-direct** OR *subject-control** OR *subject-regulat** OR *subject-direct** OR *performer-control** OR *performer-regulat** OR *performer-direct** AND *motor learning**. The query retrieved 9014 hits on PubMed and 98,600 hits on Google Scholar. Each researcher excluded hits based on title alone or title and abstract when necessary, and quit searching the databases at self-selected intervals following extended periods of excluding 100\% of search results. Following an initial run of searching databases, each researcher employed their own search strategies, including reviewing the reference sections of reviews and included articles, consulting the ``OPTIMAL'' theory website\footnote{The webpage link that was consulted (\url{https://optimalmotorlearning.com/index.php/did-you-know-that/}) is no longer available. A new webpage devoted to ``OPTIMAL" theory can be accessed using the following link: \url{https://gwulf.faculty.unlv.edu/optimal-motor-learning/}.}, and searching the ProQuest Thesis database.
+The search commenced at PubMed and Google Scholar with the following query: *self-control** OR *self-regulat** OR *self-direct** OR *learner-control** OR *learner-regulat** OR *learner-direct** OR *subject-control** OR *subject-regulat** OR *subject-direct** OR *performer-control** OR *performer-regulat** OR *performer-direct** AND *motor learning**. The query retrieved 9014 hits on PubMed and 98,600 hits on Google Scholar. Each researcher excluded hits based on title alone or title and abstract when necessary, and quit searching the databases at self-selected intervals following extended periods of excluding 100\% of search results. Following an initial run of searching databases, each researcher employed their own search strategies, including reviewing the reference sections of reviews and included articles, consulting the ``OPTIMAL'' theory website\footnote{The webpage link that was consulted (\url{https://optimalmotorlearning.com/index.php/did-you-know-that/}) is no longer available. A new webpage devoted to ``OPTIMAL'' theory can be accessed using the following link: \url{https://gwulf.faculty.unlv.edu/optimal-motor-learning/}.}, and searching the ProQuest Thesis database.
 
 This literature search process resulted in 160 articles that could not be excluded without consulting the full-text of the article. All 160 articles were coded for inclusion or exclusion by two researchers independently. All instances of disagreement between coders were reviewed by three authors (BM, ZY, and JH), and consensus was reached in each case. Disagreements were infrequent and were often caused by a lack of clarity in the articles (e.g., 100\% knowledge of results groups labeled as yoked groups). None of the coding disagreements evolved into conceptual disagreements. Rather, in each case, it was identified that one coder had missed a detail in the full text that changed its inclusion eligibility. Subsequent to this process, a total of 73 articles, which included 78 experiments, met the inclusion criteria (see Table \ref{tab:table1}).
 
@@ -254,7 +257,7 @@ The focus of this meta-analysis was on performance outcomes associated with the 
 
 Many of the self-controlled learning experiments analyzed in this study included multiple dependent measures. However, including multiple measures from the same experiment introduces bias and inflates \textcolor{red}{Type 1 error} (Scammacca, Roberts, \& Stuebing, 2014). Although there are a variety of methods for dealing with multiple measures from the same studies in meta-analysis, we chose to create a priority list and always selected the highest priority dependent measure that was reported. If the highest priority measure was not described in adequate detail to calculate the effect size, the authors were contacted and the data were requested. If the authors could not provide the data for the highest priority dependent measure reported in their study, the experiment was left out of our analysis.
 
-The rationale for selecting the approach we did was based on five considerations. First, our interest was in motor learning as reflected by an enhanced capability to perform a skill. Motor learning studies often report multiple error measures, but they are not equally coupled with performance outcome. Constant error, for example, was not included on the priority list because it is possible to have zero constant error while performing terribly overall. Therefore, we chose to prioritize measures that could be considered to be tightly coupled with performance, like absolute error, RMSE, and absolute constant error. If these measures were not used, measures that are only correlated with performance, such as variable error, movement time, and movement form, were selected. We reasoned this selection strategy would focus the analysis on measures related to improved skill while de-emphasizing other effects. Second, we reasoned that averaging across dependent measures could introduce additional heterogeneity to the analysis by including potentially disparate dependent measures. The third, fourth, and fifth considerations all relate to avoiding bias but differ with regard to the source of the bias and the alternate method that would include such bias. Thus, the third consideration was that imposing a priority list was thought to better avoid biases that could emerge from selecting the most focal measure in a given study, because an unknowable percentage of studies may have defined the focal measure based on the strength of the findings. Fourth, we reasoned that some measures may only get reported if they support the predicted benefit of self-control. Scammacca, Roberts, and Stuebing (2014) reported that effect size estimates were inflated when random dependent measures were selected in a meta-analysis case study, perhaps reflecting a selective reporting bias. Averaging across all reported measures--a fair alternative to our approach--could conceivably pick up some of this reporting bias. Fifth, we ignored lower priority measures with data when higher priority measures lacked data because we reasoned there could be a systematic reason for this pattern: preference for reporting data associated with positive effects. Indeed, there were articles where the only measure reported with sufficient data to calculate an effect size was also the only measure with a significant result (e.g., Gabriele Wulf, Raupach, \& Pfeiffer, 2005).
+The rationale for selecting the approach we did was based on five considerations. First, our interest was in motor learning as reflected by an enhanced capability to perform a skill. Motor learning studies often report multiple error measures, but they are not equally coupled with performance outcome. Constant error, for example, was not included on the priority list because it is possible to have zero constant error while performing terribly overall. Therefore, we chose to prioritize measures that could be considered to be tightly coupled with performance, like absolute error, RMSE, and absolute constant error. If these measures were not used, measures that are only correlated with performance, such as variable error, movement time, and movement form, were selected. We reasoned this selection strategy would focus the analysis on measures related to improved skill while de-emphasizing other effects. Second, we reasoned that averaging across dependent measures could introduce additional heterogeneity to the analysis by including potentially disparate dependent measures. The third, fourth, and fifth considerations all relate to avoiding bias but differ with regard to the source of the bias and the alternate method that would include such bias. Thus, the third consideration was that imposing a priority list was thought to better avoid biases that could emerge from selecting the most focal measure in a given study, because an unknowable percentage of studies may have defined the focal measure based on the strength of the findings. Fourth, we reasoned that some measures may only get reported if they support the predicted benefit of self-control. Scammacca et al. (2014) reported that effect size estimates were inflated when random dependent measures were selected in a meta-analysis case study, perhaps reflecting a selective reporting bias. Averaging across all reported measures--a fair alternative to our approach--could conceivably pick up some of this reporting bias. Fifth, we ignored lower priority measures with data when higher priority measures lacked data because we reasoned there could be a systematic reason for this pattern: preference for reporting data associated with positive effects. Indeed, there were articles where the only measure reported with sufficient data to calculate an effect size was also the only measure with a significant result (e.g., Gabriele Wulf, Raupach, \& Pfeiffer, 2005).
 
 \begingroup\fontsize{10}{12}\selectfont
 
@@ -480,23 +483,23 @@ Moderators were determined based on the authors' collective knowledge of the sel
 \hypertarget{adjusting-for-selection-effects}{%
 \subsection{Adjusting for selection effects}\label{adjusting-for-selection-effects}}
 
-Selection bias in the motor learning literature is likely caused by filtering based on the statistical significance of results (Lohse, Buchanan, \& Miller, 2016). To assess and adjust for selection effects, the \texttt{R} package \texttt{weightr} (K. M. Coburn \& Vevea, 2017) was used to fit a Vevea-Hedges weight function model to the retention data (Vevea \& Hedges, 1995). The weight-function model estimates the true average effect, heterogeneity, and the probability that a non-significant result \textcolor{red}{survives censorship and is available for analysis}. Selection effects are modelled by a step function that divides the effects into two bins at one-tailed \emph{p} =.025, coinciding with a two-tailed \emph{p}-value of .05. The probability of a non-significant effect \textcolor{red}{surviving censorship to appear} in the model is estimated relative to the probability of observing a study with a significant effect. The selection-adjusted model was compared to the naïve random effects model with a likelihood ratio test. Better fit from an adjusted model suggests selection bias in the literature.
+Selection bias in the motor learning literature is likely caused by filtering based on the statistical significance of results (Lohse et al., 2016). To assess and adjust for selection effects, the \texttt{R} package \texttt{weightr} (K. M. Coburn \& Vevea, 2017) was used to fit a Vevea-Hedges weight function model to the retention data (Vevea \& Hedges, 1995). The weight-function model estimates the true average effect, heterogeneity, and the probability that a non-significant result \textcolor{red}{survives censorship and is available for analysis}. Selection effects are modelled by a step function that divides the effects into two bins at one-tailed \emph{p} =.025, coinciding with a two-tailed \emph{p}-value of .05. The probability of a non-significant effect \textcolor{red}{surviving censorship to appear} in the model is estimated relative to the probability of observing a study with a significant effect. The selection-adjusted model was compared to the naïve random effects model with a likelihood ratio test. Better fit from an adjusted model suggests selection bias in the literature.
 
-The adjusted estimate from the weight-function model was pre-registered as the primary estimate of the true average effect in this meta-analysis. Please note that while the weight-function model attempts to estimate the true effect of self-controlled learning after correcting for selection biases, the estimated effect cannot be considered definitive. Nevertheless, the adjusted estimate is likely less biased than the naïve random effects estimate (E. C. Carter, Schönbrodt, Gervais, \& Hilgard, 2019; Hong \& Reed, 2021; Kvarven, Strømland, \& Johannesson, 2020; Vevea \& Hedges, 1995). The difference between the estimates can be informative about the potential impact of selection biases, with larger disparities between models suggesting greater selection effects.
+The adjusted estimate from the weight-function model was pre-registered as the primary estimate of the true average effect in this meta-analysis. Please note that while the weight-function model attempts to estimate the true effect of self-controlled learning after correcting for selection biases, the estimated effect cannot be considered definitive. Nevertheless, the adjusted estimate is likely less biased than the naïve random effects estimate (E. C. Carter et al., 2019; Hong \& Reed, 2021; Kvarven, Strømland, \& Johannesson, 2020; Vevea \& Hedges, 1995). The difference between the estimates can be informative about the potential impact of selection biases, with larger disparities between models suggesting greater selection effects.
 
 \hypertarget{p-curve-analysis}{%
 \subsection{\texorpdfstring{\emph{P}-curve analysis}{P-curve analysis}}\label{p-curve-analysis}}
 
-To investigate the evidential value of the self-controlled learning literature, the significant positive results at retention reported in peer-reviewed journals were submitted to a \emph{p}-curve analysis (Simonsohn, Simmons, \& Nelson, 2015). To be included in the analysis, articles needed to meet the following criteria: a) be a published article; b) state explicitly that self-controlled learning was expected to be more effective than yoked practice; c) report inferential statistics comparing a self-control group and a yoked group directly on a retention test; d) conclude that the self-control group performed significantly better than the yoked group. If the article included multiple dependent measures showing a significant effect, the dependent measure priority list was used to select the highest priority measure. If only one measure was reported as significant, that effect was included even if the experiment included higher priority measures that were null. This resulted in a slightly different sample of effects from the random effects and weight-function models.
+To investigate the evidential value of the self-controlled learning literature, the significant positive results at retention reported in peer-reviewed journals were submitted to a \emph{p}-curve analysis (Simonsohn et al., 2015). To be included in the analysis, articles needed to meet the following criteria: a) be a published article; b) state explicitly that self-controlled learning was expected to be more effective than yoked practice; c) report inferential statistics comparing a self-control group and a yoked group directly on a retention test; d) conclude that the self-control group performed significantly better than the yoked group. If the article included multiple dependent measures showing a significant effect, the dependent measure priority list was used to select the highest priority measure. If only one measure was reported as significant, that effect was included even if the experiment included higher priority measures that were null. This resulted in a slightly different sample of effects from the random effects and weight-function models.
 
-The distribution of significant \emph{p}-values is a function of the power of the experiments included in the analysis. If a \emph{p}-curve included only Type 1 errors, the expected distribution would be uniform. As the power of included experiments increases, so too does the amount of right skew in the \emph{p}-curve, with smaller \emph{p}-values appearing more frequently than large \emph{p}-values. The \emph{p}-curve analysis tests the null hypothesis that there is no evidentiary value by analyzing the amount of right skew in the distribution of \emph{p}-values. Conversely, if researchers peek at their data and stop collecting when they reach statistical significance, a practice known as \emph{p}-hacking, the distribution of significant \emph{p}-values under the null would be left skewed, with \emph{p}-values near .05 occurring more frequently. Varying mixtures of true effect sizes and intensities of \emph{p}-hacking produce varying shapes of \emph{p}-curve, therefore the observed \emph{p}-curve was compared to the distribution of \emph{p}-values expected if the studies were conducted with 33\% power. It is unlikely that researchers would continuously conduct experiments that fail \textgreater66\% of the time whilst studying the self-controlled learning phenomenon. Observing a \emph{p}-curve significantly ``flatter'\,' than what would be expected with 33\% power would suggest a lack of evidential value among the significant results (Simonsohn, Nelson, \& Simmons, 2014b, 2014a).
+The distribution of significant \emph{p}-values is a function of the power of the experiments included in the analysis. If a \emph{p}-curve included only Type 1 errors, the expected distribution would be uniform. As the power of included experiments increases, so too does the amount of right skew in the \emph{p}-curve, with smaller \emph{p}-values appearing more frequently than large \emph{p}-values. The \emph{p}-curve analysis tests the null hypothesis that there is no evidentiary value by analyzing the amount of right skew in the distribution of \emph{p}-values. Conversely, if researchers peek at their data and stop collecting when they reach statistical significance, a practice known as \emph{p}-hacking, the distribution of significant \emph{p}-values under the null would be left skewed, with \emph{p}-values near .05 occurring more frequently. Varying mixtures of true effect sizes and intensities of \emph{p}-hacking produce varying shapes of \emph{p}-curve, therefore the observed \emph{p}-curve was compared to the distribution of \emph{p}-values expected if the studies were conducted with 33\% power. It is unlikely that researchers would continuously conduct experiments that fail \textgreater66\% of the time whilst studying the self-controlled learning phenomenon. Observing a \emph{p}-curve significantly ``flatter'\,' than what would be expected with 33\% power would suggest a lack of evidential value among the significant results (Simonsohn, Nelson, \& Simmons, 2014a, 2014b).
 
 \hypertarget{sensitivity-analyses}{%
 \section{Sensitivity analyses}\label{sensitivity-analyses}}
 
-The primary analyses were followed up with several sensitivity analyses. Sensitivity analyses are used to evaluate the sensitivity of the results to the specific parameters chosen for the original analyses. The self-controlled learning literature, like many areas of behavioural research, was not produced exclusively by registered experiments with pre-specified analysis plans and 100\% reporting frequency. The complexity of selection effects at various levels, including editorial decisions, author decisions, analysis decisions, and missing data, renders the accuracy of modeled effects impossible to estimate (E. C. Carter, Schönbrodt, Gervais, \& Hilgard, 2019). Producing a range of estimates based on varying assumptions is intended to provide the reader with a broader picture of the uncertainty of the point estimates in the primary analyses.
+The primary analyses were followed up with several sensitivity analyses. Sensitivity analyses are used to evaluate the sensitivity of the results to the specific parameters chosen for the original analyses. The self-controlled learning literature, like many areas of behavioural research, was not produced exclusively by registered experiments with pre-specified analysis plans and 100\% reporting frequency. The complexity of selection effects at various levels, including editorial decisions, author decisions, analysis decisions, and missing data, renders the accuracy of modeled effects impossible to estimate (E. C. Carter et al., 2019). Producing a range of estimates based on varying assumptions is intended to provide the reader with a broader picture of the uncertainty of the point estimates in the primary analyses.
 
-Bias correction methods vary in their performance depending on the total amount of heterogeneity, the true average effect size, the amount of publication bias, and the intensity of \emph{p}-hacking in the data (E. C. Carter, Schönbrodt, Gervais, \& Hilgard, 2019). To determine which bias correction models perform well in the various plausible conditions for data in this meta-analysis, model performance checks were conducted using the \href{http://www.shinyapps.org/apps/metaExplorer/}{Meta-Showdown Explorer} shiny app developed by Carter and colleagues (2019). Simulated conditions were as follows: Medium publications bias (significant results published at 100\% frequency, non-significant published at 20\% frequency, wrong direction effects published at 5\% frequency), \textcolor{red}{medium questionable research practice environment (QRP; see Carter et al.} (2019) \textcolor{red}{for detailed explanation of QRP environment)}, \(\tau\) = 0, .2; \(g\) = 0, .2, .5; \(k\) = 60, good performance defined as a maximum of .1 upward or downward bias, and maximum mean absolute error of .1, also tested with maximum bias and error values of .15. With good performance defined by a maximum bias in either direction of .1 and maximum absolute error of .1, the weight function model and, \textcolor{red}{to a lesser extent,} \emph{p}-curve models provided coverage across all plausible conditions except the highest heterogeneity condition (\(\tau\) = .4). With good performance defined as a maximum bias and error of .15, the precision-effect with standard error (PEESE) method provided good performance in all conditions. Therefore, sensitivity analyses were conducted on effect size data via \emph{p}-curve and PEESE methods. \textcolor{red}{An additional sensitivity analysis of the estimated power among included studies was conducted with the \emph{z}-curve [@bartovs2020]. \emph{Z}-curve, like \emph{p}-curve, analyzes only statistically significant results and estimates the power of the included studies (called expected replication rate, ERR). However, unlike \emph{p}-curve, \emph{z}-curve is robust to heterogeneity because it fits a finite mixture model of seven distributions, allowing the underlying true effects to vary. Further, \emph{z}-curve also estimates the power of all studies that have been conducted (called expected discovery rate, EDR) which can be compared to the observed discovery rate in order to test for the presence of publication bias.}
+Bias correction methods vary in their performance depending on the total amount of heterogeneity, the true average effect size, the amount of publication bias, and the intensity of \emph{p}-hacking in the data (E. C. Carter et al., 2019). To determine which bias correction models perform well in the various plausible conditions for data in this meta-analysis, model performance checks were conducted using the \href{http://www.shinyapps.org/apps/metaExplorer/}{Meta-Showdown Explorer} shiny app developed by Carter and colleagues (2019). Simulated conditions were as follows: Medium publications bias (significant results published at 100\% frequency, non-significant published at 20\% frequency, wrong direction effects published at 5\% frequency), \textcolor{red}{medium questionable research practice environment (QRP; see Carter et al.} (2019) \textcolor{red}{for detailed explanation of QRP environment)}, \(\tau\) = 0, .2; \(g\) = 0, .2, .5; \(k\) = 60, good performance defined as a maximum of .1 upward or downward bias, and maximum mean absolute error of .1, also tested with maximum bias and error values of .15. With good performance defined by a maximum bias in either direction of .1 and maximum absolute error of .1, the weight function model and, \textcolor{red}{to a lesser extent,} \emph{p}-curve models provided coverage across all plausible conditions except the highest heterogeneity condition (\(\tau\) = .4). With good performance defined as a maximum bias and error of .15, the precision-effect with standard error (PEESE) method provided good performance in all conditions. Therefore, sensitivity analyses were conducted on effect size data via \emph{p}-curve and PEESE methods. \textcolor{red}{An additional sensitivity analysis of the estimated power among included studies was conducted with the \emph{z}-curve [@bartovs2020]. \emph{Z}-curve, like \emph{p}-curve, analyzes only statistically significant results and estimates the power of the included studies (called expected replication rate, ERR). However, unlike \emph{p}-curve, \emph{z}-curve is robust to heterogeneity because it fits a finite mixture model of seven distributions, allowing the underlying true effects to vary. Further, \emph{z}-curve also estimates the power of all studies that have been conducted (called expected discovery rate, EDR) which can be compared to the observed discovery rate in order to test for the presence of publication bias.}
 
 \hypertarget{primary-p-curve}{%
 \subsection{\texorpdfstring{Primary \emph{p}-curve}{Primary p-curve}}\label{primary-p-curve}}
@@ -525,7 +528,7 @@ A leave-one-out analysis of \emph{p}-curve results was conducted to assess the e
 \hypertarget{outlier-removal}{%
 \subsection{Outlier removal}\label{outlier-removal}}
 
-Two studies were flagged as significantly influential outliers by all nine influence metrics calculated during data screening: Lemos, Wulf, Lewthwaite, and Chiviacowsky (2017), \emph{g} = 3.7, and Marques, Thon, Espanhol, Tani, and Corrêa (2017), \emph{g} = 3.95. No other effect sizes were identified as outliers by any metric. Both outliers were removed from all subsequent analyses.
+Two studies were flagged as significantly influential outliers by all nine influence metrics calculated during data screening: Lemos et al. (2017), \emph{g} = 3.7, and Marques, Thon, Espanhol, Tani, and Corrêa (2017), \emph{g} = 3.95. No other effect sizes were identified as outliers by any metric. Both outliers were removed from all subsequent analyses.
 
 
 
@@ -569,12 +572,12 @@ The weight-function model combines an effect size model and a selection model (H
 \hypertarget{p-curve}{%
 \subsection{\texorpdfstring{\emph{P}-curve}{P-curve}}\label{p-curve}}
 
-The purpose of the \emph{p}-curve analysis was to investigate the evidential value in the published reports (\emph{N} = 26) of statistically significant self-controlled learning benefits. Visual inspection of Figure \ref{fig:fig4} reveals a v-shaped distribution with the greatest frequency of \emph{p}-values in the \textless.05 bin. The observed \emph{p}-curve was significantly flatter than would be expected if the experiments had 33\% power, \emph{p} = .0035, indicating an absence of evidential value. Conversely, the half \emph{p}-curve (Simonsohn, Simmons, \& Nelson, 2015) was significantly right skewed, suggesting the presence of evidential value. Sensitivity analysis, however, revealed that the half curve does not remain significantly right skewed following removal of the most extreme \emph{p}-value from the sample. \textcolor{red}{The estimated power of the included studies was 5\%, 95\% $CI$ [5\%, 17\%].}
+The purpose of the \emph{p}-curve analysis was to investigate the evidential value in the published reports (\emph{N} = 26) of statistically significant self-controlled learning benefits. Visual inspection of Figure \ref{fig:fig4} reveals a v-shaped distribution with the greatest frequency of \emph{p}-values in the \textless.05 bin. The observed \emph{p}-curve was significantly flatter than would be expected if the experiments had 33\% power, \emph{p} = .0035, indicating an absence of evidential value. Conversely, the half \emph{p}-curve (Simonsohn et al., 2015) was significantly right skewed, suggesting the presence of evidential value. Sensitivity analysis, however, revealed that the half curve does not remain significantly right skewed following removal of the most extreme \emph{p}-value from the sample. \textcolor{red}{The estimated power of the included studies was 5\%, 95\% $CI$ [5\%, 17\%].}
 
 \hypertarget{interim-discussion}{%
 \subsection{Interim discussion}\label{interim-discussion}}
 
-The primary results described above suggest that selection effects have caused a seriously distorted record of self-controlled learning. Estimated benefits are less than one third of the naïve estimate, \emph{g} = .107, 95\% \emph{CI} \textcolor{red}{[.05, .17]}. The \emph{p}-curve analysis failed to detect robust evidence of a self-controlled learning effect. The performance of the weight-function model depends on the specific conditions present in the meta-analysis, although these conditions are unknowable (E. C. Carter, Schönbrodt, Gervais, \& Hilgard, 2019). It was necessary to conduct sensitivity analyses with additional bias correction methods to assess the reliability of the selection-adjusted weight-function model estimate. Based on performance checks conducted under a range of plausible conditions, it was determined that sensitivity analyses conducted with a PEESE meta-regression and \emph{p}-curve effect size estimation would provide good performance coverage across most plausible conditions.
+The primary results described above suggest that selection effects have caused a seriously distorted record of self-controlled learning. Estimated benefits are less than one third of the naïve estimate, \emph{g} = .107, 95\% \emph{CI} \textcolor{red}{[.05, .17]}. The \emph{p}-curve analysis failed to detect robust evidence of a self-controlled learning effect. The performance of the weight-function model depends on the specific conditions present in the meta-analysis, although these conditions are unknowable (E. C. Carter et al., 2019). It was necessary to conduct sensitivity analyses with additional bias correction methods to assess the reliability of the selection-adjusted weight-function model estimate. Based on performance checks conducted under a range of plausible conditions, it was determined that sensitivity analyses conducted with a PEESE meta-regression and \emph{p}-curve effect size estimation would provide good performance coverage across most plausible conditions.
 
 
 
@@ -593,14 +596,14 @@ The primary results described above suggest that selection effects have caused a
 \hypertarget{precision-effect-with-standard-error-peese-model}{%
 \subsection{Precision-effect with standard error (PEESE) model}\label{precision-effect-with-standard-error-peese-model}}
 
-When publication bias is present in a body of evidence, sample size and effect size can be negatively correlated (Stanley \& Doucouliagos, 2014). The PEESE model fits a quadratic relationship between effect size and standard error to reflect the intuition that publication bias is stronger for low precision studies than high precision studies. The rationale is that low precision studies need to overestimate effects to achieve significance and get published, while high precision studies can publish without exaggerated effects; thus, creating greater publication bias among lower precision studies (E. C. Carter, Schönbrodt, Gervais, \& Hilgard, 2019; Stanley \& Doucouliagos, 2014). A weighted-least-squares regression model was fit with effect size regressed on the square of the standard error, weighted by the inverse of the variance:
+When publication bias is present in a body of evidence, sample size and effect size can be negatively correlated (Stanley \& Doucouliagos, 2014). The PEESE model fits a quadratic relationship between effect size and standard error to reflect the intuition that publication bias is stronger for low precision studies than high precision studies. The rationale is that low precision studies need to overestimate effects to achieve significance and get published, while high precision studies can publish without exaggerated effects; thus, creating greater publication bias among lower precision studies (E. C. Carter et al., 2019; Stanley \& Doucouliagos, 2014). A weighted-least-squares regression model was fit with effect size regressed on the square of the standard error, weighted by the inverse of the variance:
 \[g_{i} = b_{0} + b_{1}se_{i}^2 + e_{i}\]
 The PEESE method estimated a non-significant benefit of self-controlled learning after controlling for publication bias, \emph{g} = .054, \emph{p} = .659.
 
 \hypertarget{p-curve-effect-estimation}{%
 \subsection{\texorpdfstring{\emph{P}-curve effect estimation}{P-curve effect estimation}}\label{p-curve-effect-estimation}}
 
-A \emph{p}-curve model was fit to the overall retention effect size data, unlike the first primary \emph{p}-curve which was fit to the reported significant results. The \emph{p}-curve is a function of sample size and effect size, and because sample size is known, the effect size that provides the best fit to the observed \emph{p}-curve can be estimated (Simonsohn, Nelson, \& Simmons, 2014b). A \emph{p}-curve analysis conducted with th\texttt{R} package \texttt{dmetar} (Harrer, Cuijpers, Furukawa, \& Ebert, 2019) was used to estimate the average effect size among the statistically significant effects in the meta-analysis. The model estimated an average effect of \(g\) = .035.\footnote{The \emph{p}-curve of effect sizes was significantly flatter than the expected 33\% power curve as well, \emph{p} = .009.} \textcolor{red}{The estimated power of included studies was 7\%, 95\% $CI$ [5\%, 22\%]. Unfortunately, \emph{p}-curve does not perform well in the presence of heterogeneity and these results should be interpreted cautiously.}
+A \emph{p}-curve model was fit to the overall retention effect size data, unlike the first primary \emph{p}-curve which was fit to the reported significant results. The \emph{p}-curve is a function of sample size and effect size, and because sample size is known, the effect size that provides the best fit to the observed \emph{p}-curve can be estimated (Simonsohn et al., 2014a). A \emph{p}-curve analysis conducted with th\texttt{R} package \texttt{dmetar} (Harrer, Cuijpers, Furukawa, \& Ebert, 2019) was used to estimate the average effect size among the statistically significant effects in the meta-analysis. The model estimated an average effect of \(g\) = .035.\footnote{The \emph{p}-curve of effect sizes was significantly flatter than the expected 33\% power curve as well, \emph{p} = .009.} \textcolor{red}{The estimated power of included studies was 7\%, 95\% $CI$ [5\%, 22\%]. Unfortunately, \emph{p}-curve does not perform well in the presence of heterogeneity and these results should be interpreted cautiously.}
 
 \hypertarget{section-2}{%
 \subsection{\texorpdfstring{\textcolor{red}{\emph{Z}-curve}}{}}\label{section-2}}
@@ -617,34 +620,34 @@ In light of the evidence that experiments are apparently selected for positive s
 
 The primary objective of this meta-analysis was to assess the effect of providing choices during the acquisition of a motor skill on delayed retention performance in the general population. A secondary objective was to test between motivation and informational explanations for self-controlled learning benefits by investigating whether choice-type moderates the effect of choice. To this aim, an extensive search for experiments that compared self-controlled practice to a yoked comparison group was conducted. Effect size and moderator data were ascertained from data reported in the research articles or, in some cases, received directly from the authors of the studies. Efforts were taken to ensure that each effect size calculation and moderator code could be reproduced by an independent party. In parallel, the results of published experiments that achieved a hypothesized statistically significant result in favour of self-control were extracted directly from the articles and outlined in a \emph{p}-curve disclosure form (see Appendix A). Pre-registered primary analyses were applied to the data and results were followed up with a suite of sensitivity analyses.
 
-The naïve random effects model estimated a benefit from self-controlled practice of \emph{g} = .44. However, the naïve model fails to account for selection effects, such as publication bias and \emph{p}-hacking, and as such overestimates the true average effect when these selection effects are present (E. C. Carter, Schönbrodt, Gervais, \& Hilgard, 2019; Hedges \& Vevea, 1996; Stanley \& Doucouliagos, 2014). Publication status was a significant moderator of the self-controlled practice effect, accounting for 48\% of the total heterogeneity in the model. Published experiments reported an average benefit of \emph{g} = .54 while unpublished experiments reported no benefit at all on average. It is possible that researchers use statistical significance, typically defined as \emph{p} \textless{} .05 on a two-tailed test, to filter their results for publication. To account for potential selection effects driven by statistical significance, a weight-function model was fit to the retention test effect size data with a one-tailed \emph{p}-value cutpoint of .025 included in the model (Vevea \& Hedges, 1995). The adjusted model provided a significantly better fit to the data than the naïve random effects model. The model estimated the selection-adjusted benefit of self-controlled learning as \emph{g} = .11, a dramatic departure from the naïve estimate of \emph{g} = .44. Two additional bias correction techniques were conducted to assess the sensitivity of this result to changes in correction methodology. The PEESE method estimated the effect at \emph{g} = .05, while \emph{p}-curve estimated \emph{g} = .04, and neither analysis was able to rule out the null hypothesis.
+The naïve random effects model estimated a benefit from self-controlled practice of \emph{g} = .44. However, the naïve model fails to account for selection effects, such as publication bias and \emph{p}-hacking, and as such overestimates the true average effect when these selection effects are present (E. C. Carter et al., 2019; Hedges \& Vevea, 1996; Stanley \& Doucouliagos, 2014). Publication status was a significant moderator of the self-controlled practice effect, accounting for 48\% of the total heterogeneity in the model. Published experiments reported an average benefit of \emph{g} = .54 while unpublished experiments reported no benefit at all on average. It is possible that researchers use statistical significance, typically defined as \emph{p} \textless{} .05 on a two-tailed test, to filter their results for publication. To account for potential selection effects driven by statistical significance, a weight-function model was fit to the retention test effect size data with a one-tailed \emph{p}-value cutpoint of .025 included in the model (Vevea \& Hedges, 1995). The adjusted model provided a significantly better fit to the data than the naïve random effects model. The model estimated the selection-adjusted benefit of self-controlled learning as \emph{g} = .11, a dramatic departure from the naïve estimate of \emph{g} = .44. Two additional bias correction techniques were conducted to assess the sensitivity of this result to changes in correction methodology. The PEESE method estimated the effect at \emph{g} = .05, while \emph{p}-curve estimated \emph{g} = .04, and neither analysis was able to rule out the null hypothesis.
 
 In parallel to the meta-analysis described above, a \emph{p}-curve was conducted on the reported significant results. The \emph{p}-curve used somewhat different inclusion criteria focusing only on published, statistically significant results suggesting a self-controlled learning benefit. In addition, the \emph{p}-curve included results reported for any dependent measure in an article, even if the focal measure (of this meta-analysis) was reported as non-significant. Therefore, the \emph{p}-curve was more inclusive of evidence reported by authors as favouring a self-controlled benefit while ignoring experiments with null effects. The results revealed both significant right skew below \emph{p} = .025 (two-tailed) and a \emph{p}-curve that was significantly flatter than a distribution with an expected power of 33\%. The evidence of right skew, indicating superiority of self-control relative to yoked conditions, was tenuous and did not survive the deletion of the most extreme result--an experiment that reported a benefit from self-control of \emph{g} = 2.16 (Gabriele Wulf \& Adams, 2014). The overall \emph{p}-curve produced an estimate that the true power of the included experiments was 5\%, leading to a rejection of the hypothesis that the experiments contained evidential value.
 
-It appears from these analyses that the substantial self-controlled learning literature is, as of now, insufficient to provide evidence that self-controlled practice is more effective than a yoked practice. The bias correction techniques applied in this analysis are sensitive to unknown conditions, such as the true average effect size and the amount of true heterogeneity; although efforts were taken to provide coverage across most plausible conditions. The corrected estimates produced by the weight-function model, \emph{p}-curve, and PEESE methods appeared to converge on trivially small effects. Further, the \emph{p}-curve of significant results suggested a lack of evidential value. Based on the model performance parameters we \textcolor{red}{tested} (E. C. Carter, Schönbrodt, Gervais, \& Hilgard, 2019), \textcolor{red}{which allowed up to .15 unites of error as acceptable performance, our results are consistent with a} self-controlled learning \textcolor{red}{benefit} ranging from \(g\) = -.11 to .26, with \textcolor{red}{a} plausible upper \textcolor{red}{95\%} confidence limit of \(g\) = .33. Thus, this analysis does not rule out the possibility that self-controlled practice provides meaningful motor learning benefits on average. The present literature, however, appears insufficient to establish that a self-control benefit indeed exists.
+It appears from these analyses that the substantial self-controlled learning literature is, as of now, insufficient to provide evidence that self-controlled practice is more effective than a yoked practice. The bias correction techniques applied in this analysis are sensitive to unknown conditions, such as the true average effect size and the amount of true heterogeneity; although efforts were taken to provide coverage across most plausible conditions. The corrected estimates produced by the weight-function model, \emph{p}-curve, and PEESE methods appeared to converge on trivially small effects. Further, the \emph{p}-curve of significant results suggested a lack of evidential value. Based on the model performance parameters we \textcolor{red}{tested} (E. C. Carter et al., 2019), \textcolor{red}{which allowed up to .15 unites of error as acceptable performance, our results are consistent with a} self-controlled learning \textcolor{red}{benefit} ranging from \(g\) = -.11 to .26, with \textcolor{red}{a} plausible upper \textcolor{red}{95\%} confidence limit of \(g\) = .33. Thus, this analysis does not rule out the possibility that self-controlled practice provides meaningful motor learning benefits on average. The present literature, however, appears insufficient to establish that a self-control benefit indeed exists.
 
 Turning to the current theoretical debates surrounding the motivational and informational underpinnings of self-controlled learning, these debates now seem moot, or at least premature. The effectiveness of self-control was not moderated by choice-type, suggesting that self-controlled practice may be ineffective regardless of the nature of the choices provided. Indeed, the only factor we tested that moderated the effect of self-controlled practice was publication status.
 
 \hypertarget{future-studies}{%
 \subsection{Future studies}\label{future-studies}}
 
-Given that the current meta-analysis failed to support the widely touted assertion of a substantial self-controlled learning benefit (Sanli, Patterson, Bray, \& Lee, 2013; Ste-Marie, Carter, \& Yantha, 2019; Gabriele Wulf \& Lewthwaite, 2016), considerations need to be given to the design and research practices for future studies. Registered reports provide one possible path forward (Caldwell et al., 2020). A registered report involves submitting a research proposal to a two-phase peer-review. The first phase of the review occurs prior to data-collection and is assessed based on the proposed methodology, rationale, and potential contribution. If accepted in principle, researchers commit to carrying out the registered experiment and submitting the results in a final article for the second phase of peer-review. The final article is peer-reviewed for quality and adherence to the registered plan, but accept-reject decisions at this point are not based on the results. In theory, this practice should eliminate \emph{p}-hacking and, for literatures composed entirely of registered reports, publication bias. A number of motor behaviour and/or kinesiology journals have begun adopting registered reports as an option for authors, including the \emph{Human Movement Science}, \emph{Frontiers in Movement Science and Sport Psychology}, \emph{Journal of Sport and Exercise Psychology}, \emph{Journal of Sport Sciences}, and \emph{Reports in Sport and Exercise (formerly Registered Reports in Kinesiology)}.
+Given that the current meta-analysis failed to support the widely touted assertion of a substantial self-controlled learning benefit (Sanli et al., 2013; Ste-Marie et al., 2019; Gabriele Wulf \& Lewthwaite, 2016), considerations need to be given to the design and research practices for future studies. Registered reports provide one possible path forward (Caldwell et al., 2020). A registered report involves submitting a research proposal to a two-phase peer-review. The first phase of the review occurs prior to data-collection and is assessed based on the proposed methodology, rationale, and potential contribution. If accepted in principle, researchers commit to carrying out the registered experiment and submitting the results in a final article for the second phase of peer-review. The final article is peer-reviewed for quality and adherence to the registered plan, but accept-reject decisions at this point are not based on the results. In theory, this practice should eliminate \emph{p}-hacking and, for literatures composed entirely of registered reports, publication bias. A number of motor behaviour and/or kinesiology journals have begun adopting registered reports as an option for authors, including the \emph{Human Movement Science}, \emph{Frontiers in Movement Science and Sport Psychology}, \emph{Journal of Sport and Exercise Psychology}, \emph{Journal of Sport Sciences}, and \emph{Reports in Sport and Exercise (formerly Registered Reports in Kinesiology)}.
 
-While registered reports are a potentially fruitful process to begin the accumulation of evidence regarding self-controlled learning, there are practical issues with investigating self-controlled learning that motor learning researchers may find overly burdensome. For example, to have 80\% power to detect an effect of \emph{g} = .26 with a two cell experimental design, 506 participants are required. If the weight-function adjusted estimate of \emph{g} = .11 is accurate, \emph{N} = 2600 are required. More challenging still would be testing between hypothesized motivational and informational mechanisms. For example, if a 2 (choice) X 2 (choice-relevance) experiment were conducted to test whether the instructional-relevance of choice fully attenuates its effect, four times as many participants would be required to maintain the same degree of power (Simonsohn, 2015). In contrast, the median sample size among experiments included in this meta-analysis was \emph{N} = 36, which is typical of motor learning experiments in general (Lohse, Buchanan, \& Miller, 2016).
+While registered reports are a potentially fruitful process to begin the accumulation of evidence regarding self-controlled learning, there are practical issues with investigating self-controlled learning that motor learning researchers may find overly burdensome. For example, to have 80\% power to detect an effect of \emph{g} = .26 with a two cell experimental design, 506 participants are required. If the weight-function adjusted estimate of \emph{g} = .11 is accurate, \emph{N} = 2600 are required. More challenging still would be testing between hypothesized motivational and informational mechanisms. For example, if a 2 (choice) X 2 (choice-relevance) experiment were conducted to test whether the instructional-relevance of choice fully attenuates its effect, four times as many participants would be required to maintain the same degree of power (Simonsohn, 2015). In contrast, the median sample size among experiments included in this meta-analysis was \emph{N} = 36, which is typical of motor learning experiments in general (Lohse et al., 2016).
 
-In addition to challenges with establishing that an effect exists, additional challenges will emerge if researchers are interested in generalizing the benefits of self-controlled practice beyond comparisons to a yoked group, as has been the case thus far (Ste-Marie, Carter, \& Yantha, 2019; Gabriele Wulf \& Lewthwaite, 2016). Yoking may allow for inferences to be made about the act of making certain choices, but it may not provide an adequate control group for evaluating best practices in an applied setting (e.g., J. A. C. Barros, Yantha, Carter, Hussien, \& Ste-Marie, 2019; Ste-Marie, Carter, \& Yantha, 2019; Yantha, 2019). Indeed, given that our estimate suggests the advantage of self-controlled over yoked practice is small, if it exists at all, it seems unlikely that self-control would be more effective than an instructor-guided practice. An instructor-guided group could easily be argued to have advantages over a yoked group, because of the ability for the instructor to adapt choices to the current practice context and to make use of personal experience and expertise. Following this logic, experiments investigating the benefit of self-controlled over instructor-guided practice could conceivably require substantially larger samples than experiments that use yoked comparison groups.
+In addition to challenges with establishing that an effect exists, additional challenges will emerge if researchers are interested in generalizing the benefits of self-controlled practice beyond comparisons to a yoked group, as has been the case thus far (Ste-Marie et al., 2019; Gabriele Wulf \& Lewthwaite, 2016). Yoking may allow for inferences to be made about the act of making certain choices, but it may not provide an adequate control group for evaluating best practices in an applied setting (e.g., J. A. C. Barros, Yantha, Carter, Hussien, \& Ste-Marie, 2019; Ste-Marie et al., 2019; Yantha, 2019). Indeed, given that our estimate suggests the advantage of self-controlled over yoked practice is small, if it exists at all, it seems unlikely that self-control would be more effective than an instructor-guided practice. An instructor-guided group could easily be argued to have advantages over a yoked group, because of the ability for the instructor to adapt choices to the current practice context and to make use of personal experience and expertise. Following this logic, experiments investigating the benefit of self-controlled over instructor-guided practice could conceivably require substantially larger samples than experiments that use yoked comparison groups.
 
 \hypertarget{exploratory-analysis-of-pre-registered-experiments}{%
 \subsection{Exploratory analysis of pre-registered experiments}\label{exploratory-analysis-of-pre-registered-experiments}}
 
-There have been, to our knowledge, four pre-registered experiments that have compared self-controlled and yoked practice (Grand, Daou, Lohse, \& Miller, 2017; McKay \& Ste-Marie, 2020; St. Germain et al., 2021; Yantha, 2019). Three of these experiments failed to meet our inclusion criteria because they were not published or part of an accepted thesis at the time of the analysis (McKay \& Ste-Marie, 2020; St. Germain et al., 2021; Yantha, 2019). These pre-registered experiments should provide estimates of the self-control effect unbiased by selection effects and are therefore more useful for estimating the real average effect than attempting to correct biased experiments after the fact (E. C. Carter, Schönbrodt, Gervais, \& Hilgard, 2019). A random effects model was used to estimate the average effect of self-control in the four experiments and yielded \emph{g} = .02, 95\% \emph{CI} {[}-.17, .21{]}. These results converge with the bias-corrected estimates around trivially small differences between self-controlled and yoked practice conditions.
+There have been, to our knowledge, four pre-registered experiments that have compared self-controlled and yoked practice (Grand et al., 2017; McKay \& Ste-Marie, 2020; St. Germain et al., 2021; Yantha, 2019). Three of these experiments failed to meet our inclusion criteria because they were not published or part of an accepted thesis at the time of the analysis (McKay \& Ste-Marie, 2020; St. Germain et al., 2021; Yantha, 2019). These pre-registered experiments should provide estimates of the self-control effect unbiased by selection effects and are therefore more useful for estimating the real average effect than attempting to correct biased experiments after the fact (E. C. Carter et al., 2019). A random effects model was used to estimate the average effect of self-control in the four experiments and yielded \emph{g} = .02, 95\% \emph{CI} {[}-.17, .21{]}. These results converge with the bias-corrected estimates around trivially small differences between self-controlled and yoked practice conditions.
 
 \hypertarget{conclusion}{%
 \subsection{Conclusion}\label{conclusion}}
 
 We set out to assess the effect of self-controlled practice on motor learning. The published literature on the subject to date appeared unambiguously supportive of a self-control benefit, yet the results of this meta-analysis suggest this may not be the case. If authors, reviewers, and editors select for statistical significance when deciding if experiments get published, the published literature becomes biased (Ioannidis, 2005). Worse still, filtering based on statistical significance may well incentivize researchers to leverage researcher degrees of freedom to achieve a significant result, a practice known as \emph{p}-hacking, further biasing the literature (Wicherts et al., 2016). An instructive example of the potential impact of selection effects comes from research studying the so-called ego-depletion effect (Roy F. Baumeister, Vohs, \& Tice, 2007; Hagger, Wood, Stiff, \& Chatzisarantis, 2010). In a typical study, participants are asked to engage in activities that supposedly drain a limited reservoir of willpower, termed ego-depletion, and are subsequently measured on a dependent measure requiring an additional exertion of self-control, such as a Stroop task. The typical finding is that performance suffers on the second task if ego-depletion occurs beforehand. A meta-analysis by Hagger and colleagues (2010) reported the average effect of ego-depleting interventions on willpower dependent measures was \emph{d} = .62. There was apparent consensus in the field that willpower relied on a limited resource due to the ostensibly unambiguous evidence in support of the theory (R. F. Baumeister \& Vohs, 2016). Nevertheless, when bias correction methods were applied in a meta-analysis of ego-depletion literature, the adjusted estimates often did not differ significantly from zero (E. C. Carter, Kofler, Forster, \& McCullough, 2015). Subsequently, a pre-registered, multi-lab replication project tested a sample of \emph{N} = 2141 and reported that the ego-depletion effect was close to zero (Hagger et al., 2016). Thus, a prominent psychological construct substantiated by a large corpus of peer-reviewed evidence was investigated using cutting edge meta-analytic techniques that corrected for selection bias and the result was a trivially small estimated effect--an estimate supported by a subsequent large scale pre-registered replication effort. Notably, both the bias corrected meta-analysis and the subsequent multi-lab replication efforts have been criticized by ego-depletion theorists (R. F. Baumeister \& Vohs, 2016; Cunningham \& Baumeister, 2016). Others have sharply challenged these critiques (Schimmack, 2020), and while debate continues among social psychologists about the underlying theory at stake (e.g., Dang, 2018), there is consensus that several methods shown to produce positive results in the past are unlikely to replicate in future experiments.
 
-In stark parallel to the ego-depletion literature, the findings of the current research suggest the self-controlled motor learning literature may be similarly biased. As motor learning researchers consider the path forward for self-controlled learning, non-bias related limitations of the extant literature should be addressed. For example, yoked groups fail to isolate putative motivational and informational processes when self-controlling learners make choices pertinent to acquiring a skill (M. J. Carter, Rathwell, \& Ste-Marie, 2016; M. J. Carter \& Ste-Marie, 2017b; Lewthwaite, Chiviacowsky, Drews, \& Wulf, 2015). Further, exclusive reliance on yoked comparison groups limits the generalizability of self-controlled learning to applied settings where the alternative to self-control is typically coach or instructor control (i.e., those with domain-specific knowledge). As motor learning researchers in this area move forward, they are faced with the question of whether this effect is worth the resources required to study it. If that answer is yes, then in addition to being pre-registered and an adequately powered design, future self-controlled learning experiments should provide insight about either the underlying processes at work or the real world usefulness of this practice variable.
+In stark parallel to the ego-depletion literature, the findings of the current research suggest the self-controlled motor learning literature may be similarly biased. As motor learning researchers consider the path forward for self-controlled learning, non-bias related limitations of the extant literature should be addressed. For example, yoked groups fail to isolate putative motivational and informational processes when self-controlling learners make choices pertinent to acquiring a skill (M. J. Carter, Rathwell, \& Ste-Marie, 2016; M. J. Carter \& Ste-Marie, 2017b; Lewthwaite et al., 2015). Further, exclusive reliance on yoked comparison groups limits the generalizability of self-controlled learning to applied settings where the alternative to self-control is typically coach or instructor control (i.e., those with domain-specific knowledge). As motor learning researchers in this area move forward, they are faced with the question of whether this effect is worth the resources required to study it. If that answer is yes, then in addition to being pre-registered and an adequately powered design, future self-controlled learning experiments should provide insight about either the underlying processes at work or the real world usefulness of this practice variable.
 
 \hypertarget{contributions}{%
 \section{Contributions}\label{contributions}}
@@ -671,7 +674,7 @@ All material, data, and scripts to reproduce our analyses and figures can be acc
 \hypertarget{r-packages-used-in-this-project}{%
 \section{R packages used in this project}\label{r-packages-used-in-this-project}}
 
-R (Version 4.0.4; R Core Team, 2021) and the R-packages \emph{computees} (Re, 2013), \emph{dmetar} (Version 0.0.9000; Harrer, Cuijpers, Furukawa, \& Ebert, 2019), \emph{kableExtra} (Version 1.3.4; Zhu, 2021), \emph{meta} (Balduzzi, Rücker, \& Schwarzer, 2019; Version 4.19.0; Harrer, Cuijpers, Furukawa, \& Ebert, 2019; Viechtbauer, 2010), \emph{metafor} (Version 3.0.2; Viechtbauer, 2010), \emph{papaja} (Version 0.1.0.9997; Aust \& Barth, 2020), \emph{rcolorbrewer} (Neuwirth, 2014), \emph{robvis} (McGuinness, 2019), \emph{tidyverse} (Version 1.3.1; Wickham et al., 2019), and \emph{weightr} (Version 2.0.2; Kathleen M. Coburn \& Vevea, 2019).
+R (Version 4.1.1; R Core Team, 2021) and the R-packages \emph{computees} (Re, 2013), \emph{dmetar} (Version 0.0.9000; Harrer et al., 2019), \emph{kableExtra} (Version 1.3.4; Zhu, 2021), \emph{meta} (Balduzzi, Rücker, \& Schwarzer, 2019; Version 4.19.0; Harrer et al., 2019; Viechtbauer, 2010), \emph{metafor} (Version 3.0.2; Viechtbauer, 2010), \emph{papaja} (Version 0.1.0.9997; Aust \& Barth, 2020), \emph{rcolorbrewer} (Neuwirth, 2014), \emph{robvis} (McGuinness, 2019), \emph{tidyverse} (Version 1.3.1; Wickham et al., 2019), and \emph{weightr} (Version 2.0.2; Kathleen M. Coburn \& Vevea, 2019).
 
 \hypertarget{conflict-of-interest}{%
 \section{Conflict of interest}\label{conflict-of-interest}}
@@ -697,430 +700,430 @@ References marked with an asterisk (*) indicate studies included in the meta-ana
 
 \hypertarget{refs}{}
 \begin{CSLReferences}{1}{0}
-\leavevmode\hypertarget{ref-Abdollahipour2017-dr}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Abdollahipour2017-dr}{}}%
 Abdollahipour, R., Palomo Nieto, M., Psotta, R., \& Wulf, G. (2017). External focus of attention and autonomy support have additive benefits for motor performance in children. \emph{Psychol. Sport Exerc.}, \emph{32}, 17--24.
 
-\leavevmode\hypertarget{ref-Aiken2012-po}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Aiken2012-po}{}}%
 \textsuperscript{*} Aiken, C. A., Fairbrother, J. T., \& Post, P. G. (2012). The effects of self-controlled video feedback on the learning of the basketball set shot. \emph{Front. Psychol.}, \emph{3}, 338.
 
-\leavevmode\hypertarget{ref-Alami2013-gy}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Alami2013-gy}{}}%
 \textsuperscript{*} Alami, A. (2013). \emph{An examination of feedback request strategies when learning a multi-dimensional motor task under self-controlled and yoked conditions} (PhD thesis). University of Tennessee, Knoxville.
 
-\leavevmode\hypertarget{ref-Ali2012-rq}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Ali2012-rq}{}}%
 \textsuperscript{*} Ali, A., Fawver, B., Kim, J., Fairbrother, J., \& Janelle, C. M. (2012). Too much of a good thing: Random practice scheduling and self-control of feedback lead to unique but not additive learning benefits. \emph{Front. Psychol.}, \emph{3}, 503.
 
-\leavevmode\hypertarget{ref-Andrieux2016-lf}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Andrieux2016-lf}{}}%
 \textsuperscript{*} Andrieux, M., Boutin, A., \& Thon, B. (2016). {Self-Control} of task difficulty during early practice promotes motor skill learning. \emph{J. Mot. Behav.}, \emph{48}(1), 57--65.
 
-\leavevmode\hypertarget{ref-Andrieux2012-dj}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Andrieux2012-dj}{}}%
 \textsuperscript{*} Andrieux, M., Danna, J., \& Thon, B. (2012). Self-control of task difficulty during training enhances motor learning of a complex coincidence-anticipation task. \emph{Res. Q. Exerc. Sport}, \emph{83}(1), 27--35.
 
-\leavevmode\hypertarget{ref-Arsal2004-kf}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Arsal2004-kf}{}}%
 \textsuperscript{*} Arsal, G. (2004). \emph{Effects of external and {Self-Controlled} feedback schedule on retention of anticipation timing and ball throwing task} (Master's thesis). Middle East Technical University.
 
-\leavevmode\hypertarget{ref-R-papaja}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-R-papaja}{}}%
 Aust, F., \& Barth, M. (2020). \emph{{papaja}: {Create} {APA} manuscripts with {R Markdown}}. Retrieved from \url{https://github.com/crsh/papaja}
 
-\leavevmode\hypertarget{ref-R-meta}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-R-meta}{}}%
 Balduzzi, S., Rücker, G., \& Schwarzer, G. (2019). How to perform a meta-analysis with {R}: A practical tutorial. \emph{Evidence-Based Mental Health}, (22), 153--160. Retrieved from \url{https://doi.org/10.1136/ebmental-2019-300117}
 
-\leavevmode\hypertarget{ref-Barros2010-pc}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Barros2010-pc}{}}%
 \textsuperscript{*} Barros, J. A. (2010). \emph{The effects of practice schedule and {Self-Controlled} feedback manipulations on the acquisition and retention of motor skills} (PhD thesis). University of Tennessee, Knoxville.
 
-\leavevmode\hypertarget{ref-Barros2019-my}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Barros2019-my}{}}%
 \textsuperscript{*} Barros, J. A. C., Yantha, Z. D., Carter, M. J., Hussien, J., \& Ste-Marie, D. M. (2019). Examining the impact of error estimation on the effects of self-controlled feedback. \emph{Hum. Mov. Sci.}, \emph{63}, 182--198.
 
-\leavevmode\hypertarget{ref-Bass2015-cc}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Bass2015-cc}{}}%
 \textsuperscript{*} Bass, A. D. (2015). \emph{An experiment to chronometrically examine the effects of {Self-Controlled} feedback on the performance and learning of a sequential timing task} (Master's thesis). University of Tennessee, Knoxville.
 
-\leavevmode\hypertarget{ref-Bass2018-vz}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Bass2018-vz}{}}%
 \textsuperscript{*} Bass, A. D. (2018). \emph{The effect of observation on motor learning in a self-controlled feedback protocol} (PhD thesis). University of Tennessee, Knoxville.
 
-\leavevmode\hypertarget{ref-Baumeister2016-df}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Baumeister2016-df}{}}%
 Baumeister, R. F., \& Vohs, K. D. (2016). Strength model of {Self-Regulation} as limited resource: Assessment, controversies, update (chapter 2). In J. M. Olson \& M. P. Zanna (Eds.), \emph{Advances in experimental social psychology} (Vol. 54, pp. 67--127). Academic Press.
 
-\leavevmode\hypertarget{ref-Baumeister2007-rb}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Baumeister2007-rb}{}}%
 Baumeister, Roy F., Vohs, K. D., \& Tice, D. M. (2007). The strength model of {Self-Control}. \emph{Curr. Dir. Psychol. Sci.}, \emph{16}(6), 351--355.
 
-\leavevmode\hypertarget{ref-Brydges2009-zb}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Brydges2009-zb}{}}%
 \textsuperscript{*} Brydges, R., Carnahan, H., Safir, O., \& Dubrowski, A. (2009). How effective is self-guided learning of clinical technical skills? It's all about process. \emph{Med. Educ.}, \emph{43}(6), 507--515.
 
-\leavevmode\hypertarget{ref-Bund2004-hy}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Bund2004-hy}{}}%
 \textsuperscript{*} Bund, A., \& Wiemeyer, J. (2004). Self-controlled learning of a complex motor skill: Effects of the learner's preferences on performance and self-efficacy. \emph{Journal of Human Movement Studies}, \emph{47}, 215--236.
 
-\leavevmode\hypertarget{ref-Caldwell2020-jg}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Caldwell2020-jg}{}}%
 Caldwell, A. R., Vigotsky, A. D., Tenan, M. S., Radel, R., Mellor, D. T., Kreutzer, A., \ldots{} Consortium for Transparency in Exercise Science (COTES) Collaborators. (2020). Moving sport and exercise science forward: A call for the adoption of more transparent research practices. \emph{Sports Med.}, \emph{50}(3), 449--459.
 
-\leavevmode\hypertarget{ref-Carter2015-zk}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Carter2015-zk}{}}%
 Carter, E. C., Kofler, L. M., Forster, D. E., \& McCullough, M. E. (2015). A series of meta-analytic tests of the depletion effect: Self-control does not seem to rely on a limited resource. \emph{J. Exp. Psychol. Gen.}, \emph{144}(4), 796--815.
 
-\leavevmode\hypertarget{ref-Carter2019-vv}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Carter2019-vv}{}}%
 Carter, E. C., Schönbrodt, F. D., Gervais, W. M., \& Hilgard, J. (2019). Correcting for bias in psychology: A comparison of {Meta-Analytic} methods. \emph{Advances in Methods and Practices in Psychological Science}, \emph{2}(2), 115--144.
 
-\leavevmode\hypertarget{ref-Carter2014-up}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Carter2014-up}{}}%
 Carter, M. J., Carlsen, A. N., \& Ste-Marie, D. M. (2014). Self-controlled feedback is effective if it is based on the learner's performance: A replication and extension of chiviacowsky and wulf (2005). \emph{Front. Psychol.}, \emph{5}, 1325.
 
-\leavevmode\hypertarget{ref-Carter2012-sj}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Carter2012-sj}{}}%
 \textsuperscript{*} Carter, M. J., \& Patterson, J. T. (2012). Self-controlled knowledge of results: Age-related differences in motor learning, strategies, and error detection. \emph{Hum. Mov. Sci.}, \emph{31}(6), 1459--1472.
 
-\leavevmode\hypertarget{ref-Carter2016-fq}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Carter2016-fq}{}}%
 Carter, M. J., Rathwell, S., \& Ste-Marie, D. (2016). Motor skill retention is modulated by strategy choice during self-controlled knowledge of results schedules. \emph{Journal of Motor Learning and Development}, \emph{4}(1), 100--115.
 
-\leavevmode\hypertarget{ref-Carter2017-ix}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Carter2017-ix}{}}%
 Carter, M. J., \& Ste-Marie, D. M. (2017a). An interpolated activity during the knowledge-of-results delay interval eliminates the learning advantages of self-controlled feedback schedules. \emph{Psychol. Res.}, \emph{81}(2), 399--406.
 
-\leavevmode\hypertarget{ref-Carter2017-mk}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Carter2017-mk}{}}%
 Carter, M. J., \& Ste-Marie, D. M. (2017b). Not all choices are created equal: Task-relevant choices enhance motor learning compared to task-irrelevant choices. \emph{Psychon. Bull. Rev.}, \emph{24}(6), 1879--1888.
 
-\leavevmode\hypertarget{ref-Chen2002-vg}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Chen2002-vg}{}}%
 \textsuperscript{*} Chen, D. D., Hendrick, J. L., \& Lidor, R. (2002). Enhancing self-controlled learning environments: The use of self-regulated feedback information. \emph{Journal of Human Movement Studies}, \emph{43}(1), 69.
 
-\leavevmode\hypertarget{ref-Chiviacowsky2014-ob}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Chiviacowsky2014-ob}{}}%
 \textsuperscript{*} Chiviacowsky, S. (2014). Self-controlled practice: Autonomy protects perceptions of competence and enhances motor learning. \emph{Psychol. Sport Exerc.}, \emph{15}(5), 505--510.
 
-\leavevmode\hypertarget{ref-Chiviacowsky2017-fy}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Chiviacowsky2017-fy}{}}%
 \textsuperscript{*} Chiviacowsky, S., \& Lessa, H. T. (2017). Choices over feedback enhance motor learning in older adults. \emph{Journal of Motor Learning and Development}, \emph{5}(2), 304--318.
 
-\leavevmode\hypertarget{ref-Chiviacowsky2002-ep}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Chiviacowsky2002-ep}{}}%
 \textsuperscript{*} Chiviacowsky, S., \& Wulf, G. (2002). Self-controlled feedback: Does it enhance learning because performers get feedback when they need it? \emph{Res. Q. Exerc. Sport}, \emph{73}(4), 408--415.
 
-\leavevmode\hypertarget{ref-Chiviacowsky2005-iq}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Chiviacowsky2005-iq}{}}%
 Chiviacowsky, S., \& Wulf, G. (2005). Self-controlled feedback is effective if it is based on the learner's performance. \emph{Res. Q. Exerc. Sport}, \emph{76}(1), 42--48.
 
-\leavevmode\hypertarget{ref-Chiviacowsky2012-cw}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Chiviacowsky2012-cw}{}}%
 Chiviacowsky, S., Wulf, G., \& Lewthwaite, R. (2012). Self-controlled learning: The importance of protecting perceptions of competence. \emph{Front. Psychol.}, \emph{3}, 458.
 
-\leavevmode\hypertarget{ref-Chiviacowsky2012-ri}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Chiviacowsky2012-ri}{}}%
 \textsuperscript{*} Chiviacowsky, S., Wulf, G., Lewthwaite, R., \& Campos, T. (2012). Motor learning benefits of self-controlled practice in persons with parkinson's disease. \emph{Gait Posture}, \emph{35}(4), 601--605.
 
-\leavevmode\hypertarget{ref-Chiviacowsky2012-pk}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Chiviacowsky2012-pk}{}}%
 \textsuperscript{*} Chiviacowsky, S., Wulf, G., Machado, C., \& Rydberg, N. (2012). Self-controlled feedback enhances learning in adults with down syndrome. \emph{Rev. Bras. Fisioter.}, \emph{16}(3), 191--196.
 
-\leavevmode\hypertarget{ref-Chiviacowsky2008-bj}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Chiviacowsky2008-bj}{}}%
 \textsuperscript{*} Chiviacowsky, S., Wulf, G., Medeiros, F. L. de, Kaefer, A., \& Tani, G. (2008). Learning benefits of self-controlled knowledge of results in 10-year-old children. \emph{Res. Q. Exerc. Sport}, \emph{79}(3), 405--410.
 
-\leavevmode\hypertarget{ref-Chua2018-sn}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Chua2018-sn}{}}%
 Chua, L.-K., Wulf, G., \& Lewthwaite, R. (2018). Onward and upward: Optimizing motor performance. \emph{Hum. Mov. Sci.}, \emph{60}, 107--114.
 
-\leavevmode\hypertarget{ref-Coburn2017-hv}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Coburn2017-hv}{}}%
 Coburn, K. M., \& Vevea, J. L. (2017). Weightr: Estimating weight-function models for publication bias. \emph{R Package Version}, \emph{1}(2).
 
-\leavevmode\hypertarget{ref-R-weightr}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-R-weightr}{}}%
 Coburn, Kathleen M., \& Vevea, J. L. (2019). \emph{Weightr: Estimating weight-function models for publication bias}. Retrieved from \url{https://CRAN.R-project.org/package=weightr}
 
-\leavevmode\hypertarget{ref-Couvillion2020-zw}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Couvillion2020-zw}{}}%
 Couvillion, K. F., Bass, A. D., \& Fairbrother, J. T. (2020). Increased cognitive load during acquisition of a continuous task eliminates the learning effects of self-controlled knowledge of results. \emph{J. Sports Sci.}, \emph{38}(1), 94--99.
 
-\leavevmode\hypertarget{ref-Cunningham2016-qy}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Cunningham2016-qy}{}}%
 Cunningham, M. R., \& Baumeister, R. F. (2016). How to make nothing out of something: Analyses of the impact of study sampling and statistical interpretation in misleading {Meta-Analytic} conclusions. \emph{Front. Psychol.}, \emph{7}, 1639.
 
-\leavevmode\hypertarget{ref-Dang2018-xa}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Dang2018-xa}{}}%
 Dang, J. (2018). An updated meta-analysis of the ego depletion effect. \emph{Psychol. Res.}, \emph{82}(4), 645--651.
 
-\leavevmode\hypertarget{ref-davis2009-dt}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-davis2009-dt}{}}%
 \textsuperscript{*} Davis, J. (2009). \emph{Effects of self-controlled feedback on the squat} (Master's thesis). State University of New York College at Cortland.
 
-\leavevmode\hypertarget{ref-Fagundes2013-ge}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Fagundes2013-ge}{}}%
 \textsuperscript{*} Fagundes, J., Chen, D. D., \& Laguna, P. (2013). Self-control and frequency of model presentation: Effects on learning a ballet pass{é} relev{é}. \emph{Hum. Mov. Sci.}, \emph{32}(4), 847--856.
 
-\leavevmode\hypertarget{ref-Fairbrother2012-gz}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Fairbrother2012-gz}{}}%
 \textsuperscript{*} Fairbrother, J. T., Laughlin, D. D., \& Nguyen, T. V. (2012). Self-controlled feedback facilitates motor learning in both high and low activity individuals. \emph{Front. Psychol.}, \emph{3}, 323.
 
-\leavevmode\hypertarget{ref-Ferreira2019-zo}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Ferreira2019-zo}{}}%
 \textsuperscript{*} Ferreira, B. P., Malloy-Diniz, L. F., Parma, J. O., Nogueira, N. G. H. M., Apolinário-Souza, T., Ugrinowitsch, H., \& Lage, G. M. (2019). {Self-Controlled} feedback and learner impulsivity in sequential motor learning. \emph{Percept. Mot. Skills}, \emph{126}(1), 157--179.
 
-\leavevmode\hypertarget{ref-Figueiredo2018-kw}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Figueiredo2018-kw}{}}%
 \textsuperscript{*} Figueiredo, L. S., Ugrinowitsch, H., Freire, A. B., Shea, J. B., \& Benda, R. N. (2018). External control of knowledge of results: Learner involvement enhances motor skill transfer. \emph{Percept. Mot. Skills}, \emph{125}(2), 400--416.
 
-\leavevmode\hypertarget{ref-Ghorbani2019-yz}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Ghorbani2019-yz}{}}%
 \textsuperscript{*} Ghorbani, S. (2019). Motivational effects of enhancing expectancies and autonomy for motor learning: An examination of the {OPTIMAL} theory. \emph{J. Gen. Psychol.}, \emph{146}(1), 79--92.
 
-\leavevmode\hypertarget{ref-Grand2015-de}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Grand2015-de}{}}%
 \textsuperscript{*} Grand, K. F., Bruzi, A. T., Dyke, F. B., Godwin, M. M., Leiker, A. M., Thompson, A. G., \ldots{} Miller, M. W. (2015). Why self-controlled feedback enhances motor learning: Answers from electroencephalography and indices of motivation. \emph{Hum. Mov. Sci.}, \emph{43}, 23--32.
 
-\leavevmode\hypertarget{ref-Grand2017-de}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Grand2017-de}{}}%
 \textsuperscript{*} Grand, K. F., Daou, M., Lohse, K. R., \& Miller, M. W. (2017). Investigating the mechanisms underlying the effects of an incidental choice on motor learning. \emph{Journal of Motor Learning and Development}, \emph{5}(2), 207--226.
 
-\leavevmode\hypertarget{ref-Hagger2016-ay}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Hagger2016-ay}{}}%
 Hagger, M. S., Chatzisarantis, N. L. D., Alberts, H., Anggono, C. O., Batailler, C., Birt, A. R., \ldots{} Zwienenberg, M. (2016). A multilab preregistered replication of the {Ego-Depletion} effect. \emph{Perspect. Psychol. Sci.}, \emph{11}(4), 546--573.
 
-\leavevmode\hypertarget{ref-Hagger2010-cs}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Hagger2010-cs}{}}%
 Hagger, M. S., Wood, C., Stiff, C., \& Chatzisarantis, N. L. D. (2010). Ego depletion and the strength model of self-control: A meta-analysis. \emph{Psychol. Bull.}, \emph{136}(4), 495--525.
 
-\leavevmode\hypertarget{ref-Halperin2017-az}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Halperin2017-az}{}}%
 Halperin, I., Chapman, D. W., Martin, D. T., Lewthwaite, R., \& Wulf, G. (2017). Choices enhance punching performance of competitive kickboxers. \emph{Psychol. Res.}, \emph{81}(5), 1051--1058.
 
-\leavevmode\hypertarget{ref-Halperin2018-rs}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Halperin2018-rs}{}}%
 Halperin, I., Wulf, G., Vigotsky, A. D., Schoenfeld, B. J., \& Behm, D. G. (2018). Autonomy: A missing ingredient of a successful program? \emph{Strength \& Conditioning Journal}, \emph{40}(4), 18.
 
-\leavevmode\hypertarget{ref-Hansen2011-rr}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Hansen2011-rr}{}}%
 \textsuperscript{*} Hansen, S., Pfeiffer, J., \& Patterson, J. T. (2011). Self-control of feedback during motor learning: Accounting for the absolute amount of feedback using a yoked group with self-control over feedback. \emph{J. Mot. Behav.}, \emph{43}(2), 113--119.
 
-\leavevmode\hypertarget{ref-R-dmetar}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-R-dmetar}{}}%
 Harrer, M., Cuijpers, P., Furukawa, T., \& Ebert, D. D. (2019). \emph{Dmetar: Companion r package for the guide 'doing meta-analysis in r'}. Retrieved from \url{http://dmetar.protectlab.org/}
 
-\leavevmode\hypertarget{ref-Hartman2007-uv}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Hartman2007-uv}{}}%
 \textsuperscript{*} Hartman, J. M. (2007). Self-controlled use of a perceived physical assistance device during a balancing task. \emph{Percept. Mot. Skills}, \emph{104}(3 Pt 1), 1005--1016.
 
-\leavevmode\hypertarget{ref-Hedges1996-yh}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Hedges1996-yh}{}}%
 Hedges, L. V., \& Vevea, J. L. (1996). Estimating effect size under publication bias: Small sample properties and robustness of a random effects selection model. \emph{J. Educ. Behav. Stat.}, \emph{21}(4), 299--332.
 
-\leavevmode\hypertarget{ref-Hemayattalab2013-mq}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Hemayattalab2013-mq}{}}%
 \textsuperscript{*} Hemayattalab, R., Arabameri, E., Pourazar, M., Ardakani, M. D., \& Kashefi, M. (2013). Effects of self-controlled feedback on learning of a throwing task in children with spastic hemiplegic cerebral palsy. \emph{Res. Dev. Disabil.}, \emph{34}(9), 2884--2889.
 
-\leavevmode\hypertarget{ref-higgins2011}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-higgins2011}{}}%
 Higgins, Julian PT, Altman, D. G., Gøtzsche, P. C., Jüni, P., Moher, D., Oxman, A. D., \ldots{} Sterne, J. A. (2011). The cochrane collaboration's tool for assessing risk of bias in randomised trials. \emph{Bmj}, \emph{343}.
 
-\leavevmode\hypertarget{ref-Higgins2011-rg}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Higgins2011-rg}{}}%
 Higgins, J. P., \& Green, S. (Eds.). (2011). \emph{Cochrane handbook for systematic reviews of interventions} (Vol. 4). John Wiley \& Sons.
 
-\leavevmode\hypertarget{ref-Ho2016-on}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Ho2016-on}{}}%
 \textsuperscript{*} Ho, R. L. M. (2016). \emph{Self-controlled learning and differential goals: Does {``too easy''} and {``too difficult''} affect the self-control paradigm?} (PhD thesis). California State University, Long Beach.
 
-\leavevmode\hypertarget{ref-Holmberg2013-qk}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Holmberg2013-qk}{}}%
 \textsuperscript{*} Holmberg, B. A. (2013). \emph{The {``when''} and the {``what''}: Effects of {Self-Control} of feedback about multiple critical movement features on motor performance and learning} (PhD thesis). University of Tennessee, Knoxville.
 
-\leavevmode\hypertarget{ref-hong2021}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-hong2021}{}}%
 Hong, S., \& Reed, W. R. (2021). Using monte carlo experiments to select meta-analytic estimators. \emph{Research Synthesis Methods}, \emph{12}(2), 192--215.
 
-\leavevmode\hypertarget{ref-howick2008}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-howick2008}{}}%
 Howick, J. (2008). \emph{Against a priori judgements of bad methodology: Questioning double-blinding as a universal methodological virtue of clinical trials}.
 
-\leavevmode\hypertarget{ref-Huet2009-wu}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Huet2009-wu}{}}%
 \textsuperscript{*} Huet, M., Camachon, C., Fernandez, L., Jacobs, D. M., \& Montagne, G. (2009). Self-controlled concurrent feedback and the education of attention towards perceptual invariants. \emph{Hum. Mov. Sci.}, \emph{28}(4), 450--467.
 
-\leavevmode\hypertarget{ref-Ikudome2019-ru}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Ikudome2019-ru}{}}%
 \textsuperscript{*} Ikudome, S., Kou, K., Ogasa, K., Mori, S., \& Nakamoto, H. (2019). The effect of choice on motor learning for learners with different levels of intrinsic motivation. \emph{J. Sport Exerc. Psychol.}, \emph{41}(3), 159--166.
 
-\leavevmode\hypertarget{ref-Ioannidis2005-km}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Ioannidis2005-km}{}}%
 Ioannidis, J. P. A. (2005). Why most published research findings are false. \emph{PLoS Med.}, \emph{2}(8), e124.
 
-\leavevmode\hypertarget{ref-Iwatsuki2019-tf}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Iwatsuki2019-tf}{}}%
 Iwatsuki, T., Navalta, J. W., \& Wulf, G. (2019). Autonomy enhances running efficiency. \emph{J. Sports Sci.}, \emph{37}(6), 685--691.
 
-\leavevmode\hypertarget{ref-Jalalvand2019-im}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Jalalvand2019-im}{}}%
 \textsuperscript{*} Jalalvand, M., Bahram, A., Daneshfar, A., \& Arsham, S. (2019). The effect of gradual {Self-Control} of task difficulty and feedback on learning golf putting. \emph{Res. Q. Exerc. Sport}, \emph{90}(4), 429--439.
 
-\leavevmode\hypertarget{ref-Janelle1997-ht}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Janelle1997-ht}{}}%
 \textsuperscript{*} Janelle, C. M., Barba, D. A., Frehlich, S. G., Tennant, L. K., \& Cauraugh, J. H. (1997). Maximizing performance feedback effectiveness through videotape replay and a self-controlled learning environment. \emph{Res. Q. Exerc. Sport}, \emph{68}(4), 269--279.
 
-\leavevmode\hypertarget{ref-Janelle1995-rj}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Janelle1995-rj}{}}%
 Janelle, C. M., Kim, J., \& Singer, R. N. (1995). Subject-controlled performance feedback and learning of a closed motor skill. \emph{Percept. Mot. Skills}, \emph{81}(2), 627--634.
 
-\leavevmode\hypertarget{ref-jones2010-qw}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-jones2010-qw}{}}%
 \textsuperscript{*} Jones, A. (2010). \emph{Effects of amount and type of self-regulation opportunity during skill acquisition on motor learning} (PhD thesis). McMaster University.
 
-\leavevmode\hypertarget{ref-Jowett2007-et}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Jowett2007-et}{}}%
 Jowett, N., LeBlanc, V., Xeroulis, G., MacRae, H., \& Dubrowski, A. (2007). Surgical skill acquisition with self-directed practice using computer-based video training. \emph{Am. J. Surg.}, \emph{193}(2), 237--242.
 
-\leavevmode\hypertarget{ref-Kaefer2014-bs}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Kaefer2014-bs}{}}%
 \textsuperscript{*} Kaefer, A., Chiviacowsky, S., Meira, C. de M., Jr, \& Tani, G. (2014). Self-controlled practice enhances motor learning in introverts and extroverts. \emph{Res. Q. Exerc. Sport}, \emph{85}(2), 226--233.
 
-\leavevmode\hypertarget{ref-Keetch2007-yp}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Keetch2007-yp}{}}%
 \textsuperscript{*} Keetch, K. M., \& Lee, T. D. (2007). The effect of self-regulated and experimenter-imposed practice schedules on motor learning for tasks of varying difficulty. \emph{Res. Q. Exerc. Sport}, \emph{78}(5), 476--486.
 
-\leavevmode\hypertarget{ref-Kim2019-sl}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Kim2019-sl}{}}%
 \textsuperscript{*} Kim, Y., Kim, J., Kim, H., Kwon, M., Lee, M., \& Park, S. (2019). Neural mechanism underlying self-controlled feedback on motor skill learning. \emph{Hum. Mov. Sci.}, \emph{66}, 198--208.
 
-\leavevmode\hypertarget{ref-kvarven2020}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-kvarven2020}{}}%
 Kvarven, A., Strømland, E., \& Johannesson, M. (2020). Comparing meta-analyses and preregistered multiple-laboratory replication projects. \emph{Nature Human Behaviour}, \emph{4}(4), 423--434.
 
-\leavevmode\hypertarget{ref-Leiker2016-zd}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Leiker2016-zd}{}}%
 \textsuperscript{*} Leiker, A. M., Bruzi, A. T., Miller, M. W., Nelson, M., Wegman, R., \& Lohse, K. R. (2016). The effects of autonomous difficulty selection on engagement, motivation, and learning in a motion-controlled video game task. \emph{Hum. Mov. Sci.}, \emph{49}, 326--335.
 
-\leavevmode\hypertarget{ref-Leiker2019-fz}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Leiker2019-fz}{}}%
 \textsuperscript{*} Leiker, A. M., Pathania, A., Miller, M. W., \& Lohse, K. R. (2019). Exploring the neurophysiological effects of {Self-Controlled} practice in motor skill learning. \emph{Journal of Motor Learning and Development}, \emph{7}(1), 13--34.
 
-\leavevmode\hypertarget{ref-Lemos2017-qx}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Lemos2017-qx}{}}%
 \textsuperscript{*} Lemos, A., Wulf, G., Lewthwaite, R., \& Chiviacowsky, S. (2017). Autonomy support enhances performance expectancies, positive affect, and motor learning. \emph{Psychol. Sport Exerc.}, \emph{31}, 28--34.
 
-\leavevmode\hypertarget{ref-Lessa2015-eq}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Lessa2015-eq}{}}%
 \textsuperscript{*} Lessa, H. T., \& Chiviacowsky, S. (2015). Self-controlled practice benefits motor learning in older adults. \emph{Hum. Mov. Sci.}, \emph{40}, 372--380.
 
-\leavevmode\hypertarget{ref-Lewthwaite2015-bd}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Lewthwaite2015-bd}{}}%
 \textsuperscript{*} Lewthwaite, R., Chiviacowsky, S., Drews, R., \& Wulf, G. (2015). Choose to move: The motivational impact of autonomy support on motor learning. \emph{Psychon. Bull. Rev.}, \emph{22}(5), 1383--1388.
 
-\leavevmode\hypertarget{ref-Lim2015-qs}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Lim2015-qs}{}}%
 \textsuperscript{*} Lim, S., Ali, A., Kim, W., Kim, J., Choi, S., \& Radlo, S. J. (2015). Influence of self-controlled feedback on learning a serial motor skill. \emph{Percept. Mot. Skills}, \emph{120}(2), 462--474.
 
-\leavevmode\hypertarget{ref-Von_Lindern2017-al}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Von_Lindern2017-al}{}}%
 \textsuperscript{*} Lindern, A. D. von. (2017). \emph{Self-control effect during a reduction of feedback availability} (PhD thesis). University of Tennessee, Knoxville.
 
-\leavevmode\hypertarget{ref-Lohse2016-cf}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Lohse2016-cf}{}}%
 Lohse, K., Buchanan, T., \& Miller, M. (2016). Underpowered and overworked: Problems with data analysis in motor learning studies. \emph{Journal of Motor Learning and Development}, \emph{4}(1), 37--58.
 
-\leavevmode\hypertarget{ref-Marques2016-aw}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Marques2016-aw}{}}%
 \textsuperscript{*} Marques, P. G., \& Corrêa, U. C. (2016). The effect of learner's control of self-observation strategies on learning of front crawl. \emph{Acta Psychol.}, \emph{164}, 151--156.
 
-\leavevmode\hypertarget{ref-Marques2017-ue}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Marques2017-ue}{}}%
 \textsuperscript{*} Marques, P. G., Thon, R. A., Espanhol, J., Tani, G., \& Corrêa, U. C. (2017). The intermediate learner's choice of self-as-a-model strategies and the eight-session practice in learning of the front crawl swim. \emph{Kinesiology}, \emph{49}(1).
 
-\leavevmode\hypertarget{ref-R-robvis}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-R-robvis}{}}%
 McGuinness, L. A. (2019). \emph{Robvis: An r package and web application for visualising risk-of-bias assessments}. Retrieved from \url{https://github.com/mcguinlu/robvis}
 
-\leavevmode\hypertarget{ref-McKay2020-vj}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-McKay2020-vj}{}}%
 McKay, B., \& Ste-Marie, D. M. (2020). Autonomy support and reduced feedback frequency have trivial effects on learning and performance of a golf putting task. \emph{Hum. Mov. Sci.}, \emph{71}, 102612.
 
-\leavevmode\hypertarget{ref-McShane2016-by}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-McShane2016-by}{}}%
 McShane, B. B., Böckenholt, U., \& Hansen, K. T. (2016). Adjusting for publication bias in {Meta-Analysis}: An evaluation of selection methods and some cautionary notes. \emph{Perspect. Psychol. Sci.}, \emph{11}(5), 730--749.
 
-\leavevmode\hypertarget{ref-R-rcolorbrewer}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-R-rcolorbrewer}{}}%
 Neuwirth, E. (2014). \emph{RColorBrewer: ColorBrewer palettes}. Retrieved from \url{https://CRAN.R-project.org/package=RColorBrewer}
 
-\leavevmode\hypertarget{ref-Norouzi2016-cx}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Norouzi2016-cx}{}}%
 \textsuperscript{*} Norouzi, E., Hossini, F. S., \& Aghdasi, M. T. (2016). Effect of self-control feedback on the learning of a throwing task with emphasis on decision-making process. \emph{Open Science Journal of Psychology}, \emph{2}(6), 32.
 
-\leavevmode\hypertarget{ref-Nunes2019-nr}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Nunes2019-nr}{}}%
 \textsuperscript{*} Nunes, M. E. de S., Correa, U. C., Souza, M. G. T. X. de, Basso, L., Coelho, D. B., \& Santos, S. (2019). No improvement on the learning of golf putting by older persons with {Self-Controlled} knowledge of performance. \emph{J. Aging Phys. Act.}, \emph{27}(3), 300--308.
 
-\leavevmode\hypertarget{ref-Open_Science_Collaboration2015-ay}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Open_Science_Collaboration2015-ay}{}}%
 Open Science Collaboration. (2015). Estimating the reproducibility of psychological science. \emph{Science}, \emph{349}(6251), aac4716.
 
-\leavevmode\hypertarget{ref-Ostrowski2015-nb}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Ostrowski2015-nb}{}}%
 \textsuperscript{*} Ostrowski, J. (2015). \emph{The influence of shame on the frequency of self-controlled feedback and motor learning} (Master's thesis). Southern Illinois University Carbondale.
 
-\leavevmode\hypertarget{ref-page2021}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-page2021}{}}%
 Page, M. J., McKenzie, J. E., Bossuyt, P. M., Boutron, I., Hoffmann, T. C., Mulrow, C. D., \ldots{} others. (2021). The PRISMA 2020 statement: An updated guideline for reporting systematic reviews. \emph{Bmj}, \emph{372}.
 
-\leavevmode\hypertarget{ref-Patall2008-oy}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Patall2008-oy}{}}%
 Patall, E. A., Cooper, H., \& Robinson, J. C. (2008). The effects of choice on intrinsic motivation and related outcomes: A meta-analysis of research findings. \emph{Psychol. Bull.}, \emph{134}(2), 270--300.
 
-\leavevmode\hypertarget{ref-Patterson2010-tk}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Patterson2010-tk}{}}%
 \textsuperscript{*} Patterson, J. T., \& Carter, M. (2010). Learner regulated knowledge of results during the acquisition of multiple timing goals. \emph{Hum. Mov. Sci.}, \emph{29}(2), 214--227.
 
-\leavevmode\hypertarget{ref-Patterson2013-nh}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Patterson2013-nh}{}}%
 \textsuperscript{*} Patterson, J. T., Carter, M. J., \& Hansen, S. (2013). Self-controlled {KR} schedules: Does repetition order matter? \emph{Hum. Mov. Sci.}, \emph{32}(4), 567--579.
 
-\leavevmode\hypertarget{ref-Patterson2011-vt}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Patterson2011-vt}{}}%
 \textsuperscript{*} Patterson, J. T., Carter, M., \& Sanli, E. (2011). Decreasing the proportion of self-control trials during the acquisition period does not compromise the learning advantages in a self-controlled context. \emph{Res. Q. Exerc. Sport}, \emph{82}(4), 624--633.
 
-\leavevmode\hypertarget{ref-Patterson2010-uu}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Patterson2010-uu}{}}%
 \textsuperscript{*} Patterson, J. T., \& Lee, T. D. (2010). Self-regulated frequency of augmented information in skill learning. \emph{Can. J. Exp. Psychol.}, \emph{64}(1), 33--40.
 
-\leavevmode\hypertarget{ref-Post2016-vg}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Post2016-vg}{}}%
 \textsuperscript{*} Post, P. G., Aiken, C. A., Laughlin, D. D., \& Fairbrother, J. T. (2016). Self-control over combined video feedback and modeling facilitates motor learning. \emph{Hum. Mov. Sci.}, \emph{47}, 49--59.
 
-\leavevmode\hypertarget{ref-Post2011-qc}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Post2011-qc}{}}%
 \textsuperscript{*} Post, P. G., Fairbrother, J. T., \& Barros, J. A. C. (2011). Self-controlled amount of practice benefits learning of a motor skill. \emph{Res. Q. Exerc. Sport}, \emph{82}(3), 474--481.
 
-\leavevmode\hypertarget{ref-Post2014-yi}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Post2014-yi}{}}%
 \textsuperscript{*} Post, P. G., Fairbrother, J. T., Barros, J. A. C., \& Kulpa, J. D. (2014). {Self-Controlled} practice within a fixed time period facilitates the learning of a basketball set shot. \emph{Journal of Motor Learning and Development}, \emph{2}(1), 9--15.
 
-\leavevmode\hypertarget{ref-R-base}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-R-base}{}}%
 R Core Team. (2021). \emph{R: A language and environment for statistical computing}. Vienna, Austria: R Foundation for Statistical Computing. Retrieved from \url{https://www.R-project.org/}
 
-\leavevmode\hypertarget{ref-R-computees}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-R-computees}{}}%
 Re, A. C. D. (2013). Compute.es: Compute effect sizes. In \emph{R Package}. Retrieved from \url{https://cran.r-project.org/package=compute.es}
 
-\leavevmode\hypertarget{ref-Rydberg2011-zg}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Rydberg2011-zg}{}}%
 \textsuperscript{*} Rydberg, N. (2011). \emph{The effect of self-controlled practice on forearm passing, motivation, and affect in women's volleyball players} (Master's thesis). University of Nevada, Las Vegas.
 
-\leavevmode\hypertarget{ref-Sanli2013-qh}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Sanli2013-qh}{}}%
 \textsuperscript{*} Sanli, E. A., \& Patterson, J. T. (2013). Learning effects of self-controlled practice scheduling for children and adults: Are the advantages different? \emph{Percept. Mot. Skills}, \emph{116}(3), 741--749.
 
-\leavevmode\hypertarget{ref-Sanli2013-xn}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Sanli2013-xn}{}}%
 Sanli, E. A., Patterson, J. T., Bray, S. R., \& Lee, T. D. (2013). Understanding self-controlled motor learning protocols through the {Self-Determination} theory. \emph{Front. Psychol.}, \emph{3}, 611.
 
-\leavevmode\hypertarget{ref-Scammacca2014-do}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Scammacca2014-do}{}}%
 Scammacca, N., Roberts, G., \& Stuebing, K. K. (2014). {Meta-Analysis} with complex research designs: Dealing with dependence from multiple measures and multiple group comparisons. \emph{Rev. Educ. Res.}, \emph{84}(3), 328--364.
 
-\leavevmode\hypertarget{ref-Schimmack2020-ea}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Schimmack2020-ea}{}}%
 Schimmack, U. (2020). A meta-psychological perspective on the decade of replication failures in social psychology. \emph{Canadian Psychology}, \emph{61}(4), 364--376.
 
-\leavevmode\hypertarget{ref-Sigrist2013-ux}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Sigrist2013-ux}{}}%
 Sigrist, R., Rauter, G., Riener, R., \& Wolf, P. (2013). Augmented visual, auditory, haptic, and multimodal feedback in motor learning: A review. \emph{Psychon. Bull. Rev.}, \emph{20}(1), 21--53.
 
-\leavevmode\hypertarget{ref-Simonsohn2014-blog}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Simonsohn2014-blog}{}}%
 Simonsohn, U. (2015). {[}17{]} no-way interactions. \emph{The Winnower}. \url{https://doi.org/10.15200/winn.142559.90552}
 
-\leavevmode\hypertarget{ref-Simonsohn2014-yo}{}%
-Simonsohn, U., Nelson, L. D., \& Simmons, J. P. (2014a). P-curve: A key to the file-drawer. \emph{J. Exp. Psychol. Gen.}, \emph{143}(2), 534--547.
+\leavevmode\vadjust pre{\hypertarget{ref-Simonsohn2014-xq}{}}%
+Simonsohn, U., Nelson, L. D., \& Simmons, J. P. (2014a). P-curve and effect size: Correcting for publication bias using only significant results. \emph{Perspect. Psychol. Sci.}, \emph{9}(6), 666--681.
 
-\leavevmode\hypertarget{ref-Simonsohn2014-xq}{}%
-Simonsohn, U., Nelson, L. D., \& Simmons, J. P. (2014b). P-curve and effect size: Correcting for publication bias using only significant results. \emph{Perspect. Psychol. Sci.}, \emph{9}(6), 666--681.
+\leavevmode\vadjust pre{\hypertarget{ref-Simonsohn2014-yo}{}}%
+Simonsohn, U., Nelson, L. D., \& Simmons, J. P. (2014b). P-curve: A key to the file-drawer. \emph{J. Exp. Psychol. Gen.}, \emph{143}(2), 534--547.
 
-\leavevmode\hypertarget{ref-Simonsohn2015-mn}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Simonsohn2015-mn}{}}%
 Simonsohn, U., Simmons, J. P., \& Nelson, L. D. (2015). Better p-curves: Making p-curve analysis more robust to errors, fraud, and ambitious p-hacking, a reply to ulrich and miller (2015). \emph{J. Exp. Psychol. Gen.}, \emph{144}(6), 1146--1152.
 
-\leavevmode\hypertarget{ref-StGermain2021-lg}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-StGermain2021-lg}{}}%
 St. Germain, L., Williams, A., Poskus, A., Balbaa, N., Leshchyshen, O., Lohse, K. R., \& Carter, M. J. (2021). \emph{Increased perceptions of autonomy through choice fail to enhance motor skill retention}. PsyArXiv.
 
-\leavevmode\hypertarget{ref-Stanley2014-xl}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Stanley2014-xl}{}}%
 Stanley, T. D., \& Doucouliagos, H. (2014). Meta-regression approximations to reduce publication selection bias: T. D. {STANLEY} {AND} h. {DOUCOULIAGOS}. \emph{Res. Synth. Methods}, \emph{5}(1), 60--78.
 
-\leavevmode\hypertarget{ref-Ste-Marie2019-bw}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Ste-Marie2019-bw}{}}%
 Ste-Marie, D. M., Carter, M. J., \& Yantha, Z. D. (2019). Self-controlled learning: Current findings, theoretical perspectives, and future directions. In N. J. Hodges \& A. M. Williams (Eds.), \emph{Skill acquisition in sport: Research, theory and practice} (pp. 119--140). Routledge.
 
-\leavevmode\hypertarget{ref-Ste-Marie2013-uc}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Ste-Marie2013-uc}{}}%
 \textsuperscript{*} Ste-Marie, D. M., Vertes, K. A., Law, B., \& Rymal, A. M. (2013). {Learner-Controlled} {Self-Observation} is advantageous for motor skill acquisition. \emph{Front. Psychol.}, \emph{3}, 556.
 
-\leavevmode\hypertarget{ref-Tsai2015-rj}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Tsai2015-rj}{}}%
 \textsuperscript{*} Tsai, M.-J., \& Jwo, H. (2015). {CONTROLLING} {ABSOLUTE} {FREQUENCY} {OF} {FEEDBACK} {IN} a {SELF-CONTROLLED} {SITUATION} {ENHANCES} {MOTOR} {LEARNING}. \emph{Percept. Mot. Skills}, \emph{121}(3), 746--758.
 
-\leavevmode\hypertarget{ref-Vevea1995-uv}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Vevea1995-uv}{}}%
 Vevea, J. L., \& Hedges, L. V. (1995). A general linear model for estimating effect size in the presence of publication bias. \emph{Psychometrika}, \emph{60}(3), 419--435.
 
-\leavevmode\hypertarget{ref-Vevea2005-pv}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Vevea2005-pv}{}}%
 Vevea, J. L., \& Woods, C. M. (2005). Publication bias in research synthesis: Sensitivity analysis using a priori weight functions. \emph{Psychol. Methods}, \emph{10}(4), 428--443.
 
-\leavevmode\hypertarget{ref-R-metafor}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-R-metafor}{}}%
 Viechtbauer, W. (2010). Conducting meta-analyses in {R} with the {metafor} package. \emph{Journal of Statistical Software}, \emph{36}(3), 1--48. Retrieved from \url{https://doi.org/10.18637/jss.v036.i03}
 
-\leavevmode\hypertarget{ref-Wicherts2016-qz}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Wicherts2016-qz}{}}%
 Wicherts, J. M., Veldkamp, C. L. S., Augusteijn, H. E. M., Bakker, M., Aert, R. C. M. van, \& Assen, M. A. L. M. van. (2016). Degrees of freedom in planning, running, analyzing, and reporting psychological studies: A checklist to avoid p-hacking. \emph{Front. Psychol.}, \emph{7}, 1832.
 
-\leavevmode\hypertarget{ref-R-tidyverse}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-R-tidyverse}{}}%
 Wickham, H., Averick, M., Bryan, J., Chang, W., McGowan, L. D., François, R., \ldots{} Yutani, H. (2019). Welcome to the {tidyverse}. \emph{Journal of Open Source Software}, \emph{4}(43), 1686. \url{https://doi.org/10.21105/joss.01686}
 
-\leavevmode\hypertarget{ref-Williams2017-pj}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Williams2017-pj}{}}%
 \textsuperscript{*} Williams, C. K., Tseung, V., \& Carnahan, H. (2017). {Self-Control} of haptic assistance for motor learning: Influences of frequency and opinion of utility. \emph{Front. Psychol.}, \emph{8}, 2082.
 
-\leavevmode\hypertarget{ref-Woodard2020-uq}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Woodard2020-uq}{}}%
 Woodard, K. F., \& Fairbrother, J. T. (2020). Cognitive loading during and after continuous task execution alters the effects of self-controlled knowledge of results. \emph{Front. Psychol.}, \emph{11}, 1046.
 
-\leavevmode\hypertarget{ref-wu2007self}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-wu2007self}{}}%
 \textsuperscript{*} Wu, Wilbur Fong Wah. (2007). \emph{Self-control of learning multiple motor skills} (PhD thesis). Louisiana State University.
 
-\leavevmode\hypertarget{ref-Wu2011-ha}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Wu2011-ha}{}}%
 \textsuperscript{*} Wu, Will F. W., \& Magill, R. A. (2011). Allowing learners to choose: Self-controlled practice schedules for learning multiple movement patterns. \emph{Res. Q. Exerc. Sport}, \emph{82}(3), 449--457.
 
-\leavevmode\hypertarget{ref-Wulf2007-nc}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Wulf2007-nc}{}}%
 Wulf, Gabriele. (2007). Self-controlled practice enhances motor learning: Implications for physiotherapy. \emph{Physiotherapy}, \emph{93}(2), 96--101.
 
-\leavevmode\hypertarget{ref-Wulf2014-ti}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Wulf2014-ti}{}}%
 Wulf, Gabriele, \& Adams, N. (2014). Small choices can enhance balance learning. \emph{Hum. Mov. Sci.}, \emph{38}, 235--240.
 
-\leavevmode\hypertarget{ref-Wulf2014-sn}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Wulf2014-sn}{}}%
 \textsuperscript{*} Wulf, Gabriele, Chiviacowsky, S., \& Cardozo, P. L. (2014). Additive benefits of autonomy support and enhanced expectancies for motor learning. \emph{Hum. Mov. Sci.}, \emph{37}, 12--20.
 
-\leavevmode\hypertarget{ref-wulf2015-mg}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-wulf2015-mg}{}}%
 \textsuperscript{*} Wulf, Gabriele, Chiviacowsky, S., \& Drews, R. (2015). External focus and autonomy support: Two important factors in motor learning have additive benefits. \emph{Human Movement Science}, \emph{40}, 176--184.
 
-\leavevmode\hypertarget{ref-Wulf2001-nb}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Wulf2001-nb}{}}%
 \textsuperscript{*} Wulf, G., Clauss, A., Shea, C. H., \& Whitacre, C. A. (2001). Benefits of self-control in dyad practice. \emph{Res. Q. Exerc. Sport}, \emph{72}(3), 299--303.
 
-\leavevmode\hypertarget{ref-Wulf2018-ie}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Wulf2018-ie}{}}%
 \textsuperscript{*} Wulf, Gabriele, Iwatsuki, T., Machin, B., Kellogg, J., Copeland, C., \& Lewthwaite, R. (2018). Lassoing skill through learner choice. \emph{J. Mot. Behav.}, \emph{50}(3), 285--292.
 
-\leavevmode\hypertarget{ref-Wulf2016-gf}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Wulf2016-gf}{}}%
 Wulf, Gabriele, \& Lewthwaite, R. (2016). Optimizing performance through intrinsic motivation and attention for learning: The {OPTIMAL} theory of motor learning. \emph{Psychon. Bull. Rev.}, \emph{23}(5), 1382--1414.
 
-\leavevmode\hypertarget{ref-Wulf2008-de}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Wulf2008-de}{}}%
 Wulf, Gabriele, \& Mornell, A. (2008). Insights about practice from the perspective of motor learning: A review. \emph{Music Performance Research}, \emph{2}, 1--25.
 
-\leavevmode\hypertarget{ref-Wulf2005-sz}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Wulf2005-sz}{}}%
 \textsuperscript{*} Wulf, Gabriele, Raupach, M., \& Pfeiffer, F. (2005). Self-controlled observational practice enhances learning. \emph{Res. Q. Exerc. Sport}, \emph{76}(1), 107--111.
 
-\leavevmode\hypertarget{ref-Wulf2010-uw}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Wulf2010-uw}{}}%
 Wulf, Gabriele, Shea, C., \& Lewthwaite, R. (2010). Motor skill learning and performance: A review of influential factors. \emph{Med. Educ.}, \emph{44}(1), 75--84.
 
-\leavevmode\hypertarget{ref-Wulf1999-pn}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Wulf1999-pn}{}}%
 \textsuperscript{*} Wulf, G., \& Toole, T. (1999). Physical assistance devices in complex motor skill learning: Benefits of a self-controlled practice schedule. \emph{Res. Q. Exerc. Sport}, \emph{70}(3), 265--272.
 
-\leavevmode\hypertarget{ref-Yantha2019-dt}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-Yantha2019-dt}{}}%
 Yantha, Z. (2019). \emph{The recommendation for learners to be provided with control over their feedback schedule is questioned in a self-controlled learning paradigm} (Master's thesis). Universit{é} d'Ottawa / University of Ottawa.
 
-\leavevmode\hypertarget{ref-R-kableExtra}{}%
+\leavevmode\vadjust pre{\hypertarget{ref-R-kableExtra}{}}%
 Zhu, H. (2021). \emph{kableExtra: Construct complex table with 'kable' and pipe syntax}. Retrieved from \url{https://CRAN.R-project.org/package=kableExtra}
 
 \end{CSLReferences}
@@ -1146,7 +1149,7 @@ form}{P-curve disclosure form}}\label{p-curve-disclosure-form}}
 \item KR = Knowledge of results; PD = Parkinson's disease; SC = Self-controlled
 \end{TableNotes}
 \begin{longtable}[l]{>{\raggedright\arraybackslash}p{2cm}>{\raggedright\arraybackslash}p{5.5cm}>{\raggedright\arraybackslash}p{3cm}>{\raggedright\arraybackslash}p{2cm}>{\raggedright\arraybackslash}p{6cm}>{\raggedright\arraybackslash}p{1.5cm}}
-\caption{\label{tab:unnamed-chunk-12}Experiment information from papers included in the p-curve analysis.}\\
+\caption{\label{tab:unnamed-chunk-3}Experiment information from papers included in the p-curve analysis.}\\
 \toprule
 Original paper & Quoted text from original paper indicated predicted benefit of self-control relative to yoked practice & Design & Key statistical result & Quoted text from original paper with statistical results & Result\\
 \midrule
