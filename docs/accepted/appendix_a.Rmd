@@ -1,0 +1,24 @@
+# *P*-curve disclosure form
+
+```{r echo = FALSE, results = "asis"}
+kbl(table_a1,
+    longtable = TRUE,
+    booktabs = TRUE,
+    escape = TRUE,
+    linesep = "\\addlinespace",
+    caption = "Experiment information from papers included in the p-curve analysis."
+    ) %>%
+  landscape() %>%
+  kable_styling(position = "left",
+                #latex_options = "repeat_header",
+                font_size = 9.5) %>%
+  column_spec(1, width = "2cm") %>% 
+  column_spec(2, width = "5.5cm") %>% 
+  column_spec(3, width = "3cm") %>% 
+  column_spec(4, width = "2cm") %>% 
+  column_spec(5, width = "6cm") %>% 
+  column_spec(6, width = "1.5cm") %>% 
+  footnote(general = "KR = Knowledge of results; PD = Parkinson's disease; SC = Self-controlled",
+           general_title = "Note.",
+           threeparttable = TRUE)
+```
