@@ -15,6 +15,16 @@ To reproduce the analyses, we strongly encourage opening the .Rproj file using R
 │   ├── preregrma.csv
 │   └── rob_dat.csv
 ├── docs
+│   ├── accepted
+│   │   ├── appendix_a.Rmd
+│   │   ├── appendix_a.tex
+│   │   ├── appendix_b.Rmd
+│   │   ├── appendix_b.tex
+│   │   ├── manuscript-accepted.pdf
+│   │   ├── manuscript-accepted.Rmd
+│   │   ├── manuscript-accepted.tex
+│   │   ├── table-1.csv
+│   │   └── table-a1.csv
 │   ├── refs.bib
 │   ├── revision
 │   │   ├── appendix_a.Rmd
@@ -34,6 +44,7 @@ To reproduce the analyses, we strongly encourage opening the .Rproj file using R
 ├── figs
 │   ├── fig1.pdf
 │   ├── fig2.pdf
+│   ├── fig3_old.pdf
 │   ├── fig3.pdf
 │   ├── fig4_old.pdf
 │   ├── fig4.pdf
