@@ -130,13 +130,23 @@ robvis::rob_summary(data = data_rob1, tool = "ROB1",
 ## Run mixed-effects analysis with publication moderator
 scm <- rma(ret_g, ret_v, mods = ~(pub), data = mydata, slab =
              paste(Author, Year, sep = ", "), measure = "SMD")
-forest(scm, order = "obs")
+forest(scm, order = "fit", rows = c(-1:14, 20:83), addfit = FALSE, ylim = c(-7, 60), cex = .8)
 par(font = 2) # Bold font
 # Values for labels will depend on size of plots pane
-text(4.75, 54, "Hedges' g [95%CI]", pos = 4) # Label column
-text(-7.75, 54, "Author(s) and Year", pos = 4) # Label column
-text(2.6, -0.5, "Favours Self-Control") # Label directions of x-axis
-text(-2, -0.5, "Favours Yoked") # Label directions of x-axis
+text(5.75, 59, "Hedges' g [95%CI]", pos = 4) # Label column
+text(-7.75, 59, "Author(s) and Year", pos = 4) # Label column
+text(4.3, -7, "Favours Self-Control") # Label directions of x-axis
+text(-2, -7, "Favours Yoked") # Label directions of x-axis
+par(font=4)# bold italic font
+text(-7.75, c(56.75, 12), pos = 4, c("Published Experiments", "Unpublished Experiments")) # Title for unpublished studies
+
+res.o <- rma(ret_g, ret_v, data = mydata)
+res.u <- rma(ret_g, ret_v, subset = (pub=="n"), data = mydata)
+res.p <- rma(ret_g, ret_v, subset = (pub=="y"), data = mydata)
+
+addpoly(res.p, row = 14, cex = .8, mlab = "RE Model for Published Subgroup")
+addpoly(res.u, row = -3, cex = .8, mlab = "RE Model for Unpublished Subgroup")
+addpoly(res.o, row = -5, cex = .8, mlab = "RE Model for Overall Estimate")
 
 ## Figure 4: Funnel plot
 retres <- rma(ret_g, ret_v, data = mydata)
