@@ -1,4 +1,3 @@
-
 ######################################################################
 ## Analysis script for the paper:                                   ##
 ## "Meta-analytic findings of the self-controlled motor learning    ##
@@ -7,6 +6,7 @@
 ##                                                                  ##
 ## Created by Brad McKay (bradmckay8 [at] gmail [dot] com)          ##
 ######################################################################
+
 
 # Required libraries (see lines 23-26 for information on having these
 # packages automatically installed if you do not already have them on
@@ -18,12 +18,12 @@ library(metafor)
 library(RColorBrewer)
 library(robvis)
 library(weightr)
+library(zcurve)
 
 
 # The code below will check whether the required packages are already
 # installed. If not installed, then it will install it and load it
-# for you. To run the code, uncomment from lines 29-38 and lines 41-46.
-# CRAN packages
+# for you. To run the code, uncomment from lines 28-38 and lines 40-46.
 
 # CRAN packages
 # pkgs = c("devtools", "tidyverse", "metafor", "meta", "weightr", "robvis")
@@ -52,6 +52,16 @@ data <- read_csv("data/data.csv")
 
 # Exclude subgroups that have been collapsed into single effect sizes
 dat <- data[-c(81,82),]
+
+# Create columns with average n per group
+dat$n1 <- dat$N/2
+dat$n2 <- dat$N/2
+
+# Turn effect size data into escal object
+dat <- escalc(measure = "SMD", yi = ret_g, vi = ret_v, n1i = n1, n2i = n2,  data = dat)
+
+# Calculate p-values for z-curve analysis
+dat$pval <- summary(dat)$pval
 
 # Screen for influential cases
 res <- rma(ret_g, ret_v, data = dat)
@@ -94,6 +104,12 @@ source("scripts/pcurve_app4.06.R")
 pcurve_app("dataret.txt", "data/") ## Output will be saved to data folder
 
 # Sensitivity analyses
+# Conduct z-curve analysis
+retp <- dplyr::filter(mydata, mydata$pval != "NA")
+pp <- retp$pval
+zed <- zcurve(p = pp)
+summary(zed)
+
 ## Fit PEESE meta-regression
 peese <- lm(x~v, weights = 1/v)
 summary(peese)
@@ -104,6 +120,7 @@ pce <- mydata[-c(5,13,14,15,16,17,18,19,26,27,31,36,39,42,43,44,46,49,55,
                  56,59,60,61,66,67,72,77,80),]
 ret <- metagen(ret_g, ret_se, data = pce)
 pcurve(ret, effect.estimation = TRUE, N = pce$N)
+pcurve(ret, N = pce$N)
 
 # Exploratory analysis of pre-registered experiments
 # Import dataset
@@ -111,6 +128,17 @@ preregrma <- read_csv("data/preregrma.csv")
 
 # Fit random effects model
 rma(g, v, data = preregrma)
+
+
+## Exploratory analysis of transfer tests
+# Fit naive random effects model to transfer data
+tran <- rma(tra_g, tra_v, data = dat)
+tran # view results
+
+# Fit weight function model to transfer data
+tg <- dat$tra_g
+tv <- dat$tra_v
+weightfunct(tg, tv)
 
 #--------------------------
 
@@ -137,12 +165,12 @@ text(5.75, 59, "Hedges' g [95%CI]", pos = 4) # Label column
 text(-7.75, 59, "Author(s) and Year", pos = 4) # Label column
 text(4.3, -7, "Favours Self-Control") # Label directions of x-axis
 text(-2, -7, "Favours Yoked") # Label directions of x-axis
-par(font=4)# bold italic font
+par(font = 4)# bold italic font
 text(-7.75, c(56.75, 12), pos = 4, c("Published Experiments", "Unpublished Experiments")) # Title for unpublished studies
 
 res.o <- rma(ret_g, ret_v, data = mydata)
-res.u <- rma(ret_g, ret_v, subset = (pub=="n"), data = mydata)
-res.p <- rma(ret_g, ret_v, subset = (pub=="y"), data = mydata)
+res.u <- rma(ret_g, ret_v, subset = (pub == "n"), data = mydata)
+res.p <- rma(ret_g, ret_v, subset = (pub == "y"), data = mydata)
 
 addpoly(res.p, row = 14, cex = .8, mlab = "RE Model for Published Subgroup")
 addpoly(res.u, row = -3, cex = .8, mlab = "RE Model for Unpublished Subgroup")
