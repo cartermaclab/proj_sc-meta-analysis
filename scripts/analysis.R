@@ -53,6 +53,7 @@ data <- read_csv("data/data.csv")
 # Exclude subgroups that have been collapsed into single effect sizes
 dat <- data[-c(81,82),]
 
+
 # Create columns with average n per group
 dat$n1 <- dat$N/2
 dat$n2 <- dat$N/2
@@ -73,6 +74,15 @@ print(inf)
 
 # Remove influential cases
 mydata <- dat[-c(50,56),]
+
+# calculate total N from primary model
+
+nprime <-
+  mydata %>%
+  filter_at(vars(starts_with("ret")), any_vars(!is.na(.)))
+
+N = sum(nprime$N)
+
 
 # Fit naive random effects model to retention data
 rma(ret_g, ret_v, data = mydata)
@@ -98,13 +108,10 @@ x <- mydata$ret_g
 v <- mydata$ret_v
 weightfunct(x,v)
 
-## Create p-curve app function with code provided here:
-## http://p-curve.com/app4/pcurve_app4.06.r
-source("scripts/pcurve_app4.06.R")
-pcurve_app("dataret.txt", "data/") ## Output will be saved to data folder
 
 # Sensitivity analyses
 # Conduct z-curve analysis
+set.seed(9293)
 retp <- dplyr::filter(mydata, mydata$pval != "NA")
 pp <- retp$pval
 zed <- zcurve(p = pp)
@@ -185,6 +192,11 @@ funnel.rma(retres, refline = 0, level = c(90, 95, 99), shade = c("white", "gray5
 ## can be accessed at: https://vevealab.shinyapps.io/WeightFunctionModel/
 ## or the shiny app can be run locally using weightr::shiny_weightr()
 ## The plot was generated using the ret_g and ret_v data.
+
+## Create p-curve app function with code provided here:
+## http://p-curve.com/app4/pcurve_app4.06.r
+source("scripts/pcurve_app4.06.R")
+pcurve_app("dataret.txt", "data/") ## Output will be saved to data folder
 
 ## Figure 5: P-curve plot of significant results
 ## P-curve plot can be found in the data folder or can be reproduced using
